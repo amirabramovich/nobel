@@ -1,0 +1,1176 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Digital Humanities Project BGU 2019</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<script> 
+        function validation()                                    
+        { 
+            var name = document.forms["RegForm"]["form-name"];               
+            var age = document.forms["RegForm"]["form-age"]; 
+            var gender = document.forms["RegForm"]["form-gender"]; 
+            var country = document.forms["RegForm"]["form-country"]; 
+            var religion = document.forms["RegForm"]["form-religion"]; 
+            var occurance = document.forms["RegForm"]["form-occurance"]; 
+            var university = document.forms["RegForm"]["form-university"]; 
+            var award = document.forms["RegForm"]["form-award"]; 
+            if (name.value == "")                                  
+            { 
+                window.alert("Please enter your name."); 
+                name.focus(); 
+                return false; 
+            } 
+            if (age.value == "")                                  
+            { 
+                window.alert("Please enter your age."); 
+                age.focus(); 
+                return false; 
+            } 
+            if (gender.value == "")                                  
+            { 
+                window.alert("Please select your gender."); 
+                gender.focus(); 
+                return false; 
+            } 
+            if (country.value == "")                                  
+            { 
+                window.alert("Please select your country."); 
+                country.focus(); 
+                return false; 
+            } 
+            if (religion.value == "")                                  
+            { 
+                window.alert("Please select your religion."); 
+                religion.focus(); 
+                return false; 
+            } 
+            if (occurance.value == "")                                  
+            { 
+                window.alert("Please select your occurance."); 
+                occurance.focus(); 
+                return false; 
+            } 
+            if (university.value == "")                                  
+            { 
+                window.alert("Please select your university."); 
+                university.focus(); 
+                return false; 
+            } 
+            if (award.value == "")                                  
+            { 
+                window.alert("Please select your award."); 
+                award.focus(); 
+                return false; 
+            } 
+            var countries = 
+                ["United States of America", "United Kingdom", "Germany", "France", "Sweden", "Russia", "Australia", "Austria", "Switzerland", "Japan", "Soviet Union", "Canada", "Italy", "Kingdom of the Netherlands", "Poland", "Denmark", "Norway", "Israel", "Weimar Republic", "Belgium", "Ireland", "South Africa", "Spain", "China", "Egypt", "Czechoslovakia", "Argentina", "Finland", "India", "Brazil", "Yugoslavia", "Mexico", "New Zealand", "Pakistan", "Chile", "Colombia", "Greece", "Guatemala", "Liberia", "Palestinian", "Portugal", "Prussia", "Romania", "Saint Lucia", "Turkey", "Albania", "Bangladesh", "Belarus", "Costa Rica", "Croatia", "Cyprus", "Estonia", "Ghana", "Iceland", "Iran", "Kenya", "Lithuania", "Mauritius", "Myanmar", "Nigeria", "Peru", "South Korea", "Tibet", "Ukraine", "United Arab Republic", "Venezuela", "Vietnam", "Wales", "Yemen"];
+            var names = 
+                ["John", "Robert", "William", "George", "Paul", "James", "Richard", "Charles", "Arthur", "Joseph", "Karl", "Albert", "Peter", "Thomas", "David", "Otto", "Edward", "Frederick", "Hans", "Daniel", "Martin", "Michael", "Carl", "Ernest", "Hermann", "Max", "Roger", "Theodor", "Walter", "Eric", "Harry", "Herbert", "José", "Wilhelm", "Alfred", "Andrew", "Bernard", "Christian", "Ernst", "Frank", "Georg", "Harold", "Heinrich", "Henri", "Henry", "Johannes", "Louis", "Maria", "Muhammed", "Norman", "Wolfgang", "Alexander", "Brian", "Emil", "Francis", "François", "Frédéric", "Friedrich", "Fritz", "Georges", "Gerhard", "Ilya", "Jean", "Johann", "Jules", "Leon", "Ludwig", "Maurice", "Niels", "Oliver", "Patrick", "Philip", "Ronald", "Rudolf", "Theodore", "Werner", "Aaron", "Adolf", "Alan", "Andre", "Andreas", "August", "Barry", "Bengt", "Carlos", "Christopher", "Claude", "Derek", "Donald", "Eduard", "Edwin", "Elias", "Erwin", "Eugène", "Ferdinand", "Gabriel", "Gérard", "Günter", "Gustav", "Henrik", "Hideki", "Howard", "Ivan", "Jack", "Jacques", "Jaroslav", "Jean-Marie", "Jerome", "Julius", "Kenneth", "Konrad", "Kurt", "Lars", "Léon", "Leonid", "Linus", "Luis", "Marie", "Mario", "Melvin", "Mikhail", "Nikolai", "Owen", "Philipp", "Ragnar", "Ralph", "Samuel", "Saúl", "Simon", "Stanley", "Steven", "Tomas", "Victor", "Walther", "Willard", "Aage", "Ada", "Adam", "Adolfo", "Agnes", "Ahmad", "Ahmed", "Akira", "Al", "Alan Jay", "Albrecht", "Alessandro", "Alexey", "Alexis", "Alfonso", "Alice", "Allan", "Allen", "Alva", "Alvin", "Amartya", "Anatole", "André", "Andrei", "Angus", "Ann", "Anna", "Anthony", "Anthony James", "Anton", "Antonio", "Antony", "Antoon", "Anwar", "Archer", "Archibald", "Aristide", "Arne", "Arno", "Arnold", "Artturi", "Arvid", "Auguste", "Aziz", "Barack", "Barbara", "Baruch", "Ben", "Bernardo", "Bert", "Bertha", "Bertil", "Bertram", "Bertrand", "Bob", "Boris", "Bruce", "Burton", "C.", "Camillo", "Camilo", "Carl Gustaf", "Carlo", "Carolyn", "Cecil", "César", "Christiaan", "Christiane", "Clifford", "Clinton", "Clive", "Conrad", "Cordell", "Corneille", "Craig", "Cuthbert", "Cyril", "Cyrine", "Czesław", "Dag", "Dale", "Dario", "Dennis", "Desmond", "Dickinson", "Dominique", "Donal", "Donna", "Doris", "Dorothy", "Douglas", "Douglass", "Dudley", "Duncan", "Earl", "Edgar", "Edmond", "Edmund", "Edvard", "Eemil", "Eiichi", "Elfriede", "Elie", "Élie", "Elinor", "Eliot", "Elisabeth", "Elizabeth", "Ellen", "Emilio", "Emily", "Enrico", "Erik", "Ernesto", "Eugene", "Eugenio", "Eyvind", "Felix", "Feodor", "Ferid", "Finn", "Frances", "Franco", "Françoise", "Frans", "Franz", "Fred", "Frederik", "Fredrik", "Fridtjof", "Frits", "Gabriela", "Gary", "Geoffrey", "Gerald", "Gerard", "Gerd", "Gerhart", "Gertrude", "Gerty", "Gilles", "Giosuè", "Giulio", "Giuseppe", "Glenn", "Godfrey", "Grazia", "Gregory", "Guglielmo", "Guillaume", "Guillermo", "Gunnar", "Gustaf", "Gustave", "Gyatso", "Halldór", "Hamilton", "Hannes", "Harald", "Hartmut", "Heike", "Hendrik", "Henryk", "Herta", "Hiroshi", "Hjalmar", "Horst", "Hugo", "Hunter", "Igor", "Ilmari", "Imre", "Irène", "Irving", "Irwin", "Isaak", "Isamu", "Isidor", "Ivar", "Ivo", "Jacinto", "Jakob", "Jan", "Jean-Baptiste", "Jean-Paul", "Jean-Pierre", "Jeffrey", "Jens", "Jimmy", "Joachim", "Jody", "John Franklin", "Joshua", "Juan Manuel", "Juan Ramón", "Julian", "Kai", "Kailash", "Kalevi", "Kazuo", "Kenichi", "Kenzaburō", "Kip", "Klas", "Klaus", "Knut", "Kofi", "Kōichi", "Konstantin", "Lawrence", "Lech", "Lee", "Leo", "Leopold", "Lester", "Lev", "Lhamo", "Linda", "Lloyd", "Luc", "Lucas", "Luigi", "MacFarlane", "Mairead", "Makoto", "Manfred", "Mario José", "Marshall", "Martinus", "Martti", "Mary", "Masatoshi", "Maxime", "May-Britt", "Menachem", "Miguel Ángel", "Milton", "Mohamed", "Murray", "Myron", "Nadine", "Nathan", "Nelly", "Nelson", "Nevill", "Nicholas", "Nicolaas", "Niko", "Nils", "Octavio", "Odd", "Odysseas", "Oiva", "Orhan", "Osamu", "Pablo", "Pär", "Pavel", "Pearl", "Pepa", "Percy", "Phillip", "Pierre", "Pieter", "Pyotr", "Rabindranath", "Rainer", "Raleigh", "Randy", "Raymond", "Reinhard", "Renato", "René", "Riccardo", "Rickard", "Rigoberta", "Rita", "Roald", "Robert William", "Roderick", "Rodney", "Rolf", "Romain", "Rosalyn", "Roy", "Rudolph", "Rudyard", "Russell", "Ryōji", "Salvador", "Salvatore", "Santiago", "Seamus", "Seán", "Selma", "Serge", "Severo", "Sheldon", "Sherwood", "Shimon", "Shin'ichirō", "Shinya", "Shirin", "Shmuel", "Shūji", "Sidney", "Sigrid", "Stanford", "Stanislav", "Stefan", "Su Pu", "Sully", "Sune", "Susumu", "Sviatlana", "Sydney", "Tadeusz", "Takaaki", "Tasuku", "Tenzin", "Theo", "Therese", "Thondup", "Tim", "Tjalling", "Tobias", "Toni", "Torsten", "Toshihide", "Trygve", "Ulf", "Val", "Vasily", "Vernon", "Vicente", "Villatoro", "Vincent", "Virgin Mary", "Vitaly", "Vladimir", "Warren", "Wendell", "Weta", "Willem", "William Lawrence", "Willis", "Willy", "Winston", "Wisława", "Władysław", "Woodrow", "Yasser", "Yasunari", "Yitzhak", "Yōichirō", "Yoshinori", "Yves"];
+            var ages = 
+                ["63", "61", "56", "60", "64", "54", "68", "62", "57", "67", "48", "69", "55", "70", "52", "49", "46", "73", "71", "59", "53", "50", "47", "58", "75", "72", "65", "77", "74", "44", "42", "76", "51", "45", "79", "66", "38", "43", "40", "80", "78", "39", "85", "37", "82", "81", "41", "35", "87", "84", "83", "36", "33", "32", "31", "88", "34", "96", "92", "90", "89", "86", "25", "17"]; 
+            var occurances = 
+                ["University Teacher", "Physicist", "Chemist", "Physician", "Writer", "Professor", "Biochemist", "Politician", "Economist", "Biologist", "Poet", "Novelist", "Journalist", "Nuclear Scientist", "Playwright", "Inventor", "Theoretical Physicist", "Diplomat", "Screenwriter", "Mathematician", "Geneticist", "Physiologist", "Translator", "Neuroscientist", "Scientist", "Autobiographer", "Essayist", "Academic", "Academic", "Engineer", "Pedagogue", "Author", "Virologist", "Molecular Biologist", "Pharmacologist", "Astronomer", "Immunologist", "Lawyer", "Pharmacist", "Philosopher", "Neurologist", "Non-Fiction Writer", "Peace Activist", "Prosaist", "Teacher", "Historian", "Psychologist", "Esperantist", "Human Rights Activist", "Zoologist", "Children'S Writer", "Researcher", "Astrophysicist", "Judge", "Linguist", "Literary Critic", "Lyricist", "Painter", "Pathologist", "Science Fiction Writer", "Sociologist", "Trade Unionist", "Entrepreneur", "Jurist", "Statistician", "Surgeon", "Biophysicist", "Composer", "Microbiologist", "Political Scientist", "Actor", "Artist", "Pacifist", "Psychiatrist", "Short Story Writer", "Songwriter", "Statesperson", "Bacteriologist", "Banker", "Blogger", "Businessperson", "Diarist", "Feminist", "Film Director", "Internist", "Military Officer", "Photographer", "Physical Chemist", "Political Activist", "Prose", "Sculptor", "Theologian", "Activist", "Architect", "Biographer", "Biotechnologist", "Cardiologist", "Cell Biologist", "Civil Engineer", "Columnist", "Conscientious Objector", "Critic", "Dramaturgy", "Econometrician", "Economic Historian", "Epistemologist", "Ethologist", "Film Actor", "French Resistance Fighter", "Librarian", "Librettist", "Meteorologist", "Military Personnel", "Musicologist", "Opinion Journalist", "Philosopher Of Science", "Pianist", "Poet Lawyer", "Professeur Des UniversitéS", "Resistance Fighter", "Science Writer", "Social Critic", "Theatre Director", "War Correspondent", "Agriculturer", "Altar Server", "American Football Player", "Analytic Philosopher", "Anatomist", "Anglican Priest", "Anthropologist", "Anti-Vaccine Activist", "Aphorist", "Art Critic", "Artificial Intelligence Researcher", "Athlete", "Beekeeper", "Bibliographer", "Botanist", "Catholic Priest", "Catholic Religious", "Chronicler", "Civil Rights Advocate", "Classical Archaeologist", "Classical Scholar", "Computer Scientist", "Contributing Editor", "Correspondent", "Cosmologist", "Cricketer", "Crystallographer", "Curator", "Director General", "Disc Jockey", "Doctor Of Science", "Dramaturge", "Editor", "Educator", "Electrician", "Entomologist", "Epigrapher", "Evolutionary Biologist", "Existentialist", "Explorer", "Film Producer", "Financier", "Full Professor", "Geopolitician", "Graphic Artist", "Guitarist", "Hematologist", "Historian Of Classical Antiquity", "Humanitarian", "Hymnwriter", "Ice Hockey Player", "Idist", "Illustrator", "Intellectual", "Judaic Scholar", "Jurist-Consultant", "Lacrosse Player", "Legal Historian", "Logician", "Medievalist", "Memoirist", "Merchant", "Metaphysician", "Military Physician", "Minister", "Mountaineer", "Music Historian", "Neurosurgeon", "Numismatist", "Nun", "Oncologist", "Ontologist", "Ophthalmologist", "Organist", "Ornithologist", "Parasitologist", "Pastor", "Percussionist", "Philosopher Of Language", "Physician Writer", "Polar Explorer", "Political Writer", "Polymath", "Preacher", "Prelate", "President", "Publisher", "Pundit", "Quantum Physicist", "Record Producer", "Satirist", "Scenographer", "Scientific Editor", "Singer", "Social Reformer", "Social Worker", "Stage Actor", "Suffragette", "Toxicologist", "Translators And Interpreters", "Travel Writer", "Urologist", "Veterinarian", "Whitley Professor Of Biochemistry"];
+            var religions = 
+                ["Caseatheism", "Christianity", "Judaism", "Anglicanism", "Lutheranism", "Islam", "Protestantism", "Methodism", "Sunni Islam", "Hinduism", "Baptists", "Atheism", "Episcopal Church", "Buddhism", "Viral", "United Church Of Christ", "Unitarianism", "Tibetan Buddhism", "Theravada", "Sikhism", "Shia Islam", "Roman Catholic", "Religious Society Of Friends", "Mormonism", "Islamica", "Gereformeerde Kerke", "Eastern Orthodox Church", "Deus Vult", "Deism", "Continental Reformed Church", "Congregationalist Polity", "Calvinism"]; 
+            var universities = 
+                ["Harvard University", "Columbia University", "University of Chicago", "Massachusetts Institute of Technology", "University of Cambridge", "University of California, Berkeley", "Trinity College", "Ludwig Maximilian University of Munich", "California Institute of Technology", "Princeton University", "University of Göttingen", "Yale University", "University of Paris", "Cornell University", "Stanford University", "Humboldt University of Berlin", "Heidelberg University", "University of Wisconsin–Madison", "Science Faculty of Paris", "École Normale Supérieure", "Uppsala University", "University of Vienna", "Harvard Medical School", "ETH Zurich", "City College of New York", "University of Illinois at Urbana–Champaign", "Leiden University", "University of Manchester", "University of Edinburgh", "St John's College", "Kyoto University", "University of Tokyo", "University of Oslo", "University of Minnesota", "Stockholm University", "Johns Hopkins University", "University of Toronto", "University of Strasbourg", "University of Michigan", "University of Marburg", "University of Illinois system", "University of Copenhagen", "University College London", "The Bronx High School of Science", "New York University", "Case Western Reserve University", "Utrecht University", "University of California, Los Angeles", "Technical University of Berlin", "London School of Economics", "Gonville and Caius College", "Zurich University", "University of Washington", "University of Tübingen", "University of Freiburg", "Technical University of Munich", "McGill University", "Lycée Louis-le-Grand", "Lycée Henri-IV", "Johns Hopkins School of Medicine", "Goethe University Frankfurt", "Washington University in St. Louis", "University of Rochester", "University of Pennsylvania", "University of Graz", "University of Geneva", "University of Bonn", "Swarthmore College", "Sorbonne", "Nagoya University", "Lycée Condorcet", "King's College London", "King's College", "Karolinska Institute", "Hebrew University of Jerusalem", "Fitzwilliam College", "University of Wrocław", "University of Virginia", "University of the Witwatersrand", "University of Texas at Austin", "University of Oxford", "University of Helsinki", "University of Glasgow", "University of Cape Town", "University of Birmingham", "University of Basel", "University of Amsterdam", "Stuyvesant High School", "Saint Petersburg State University", "Peterhouse", "Oberlin College", "Northwestern University", "MSU Faculty of Physics", "Magdalen College", "Lund University", "Leipzig University", "Fu Foundation School of Engineering and Applied Science", "Columbia University College of Physicians and Surgeons", "Carnegie Mellon University", "Amherst College", "Westminster School", "Washington High School", "Vanderbilt University", "University of Turin", "University of Stuttgart", "University of Pittsburgh", "University of Paris VI: Pierre-and-Marie-Curie University", "University of Nebraska–Lincoln", "University of Melbourne", "University of Massachusetts Amherst", "University of Liverpool", "University of Kiel", "University of Hamburg", "University of California, San Diego", "University of British Columbia", "University of Bristol", "Université libre de Bruxelles", "United States Naval Academy", "Union College", "Tufts University", "St Catherine's College", "Sidney Sussex College", "Purdue University", "Perelman School of Medicine at the University of Pennsylvania", "Peking University", "Pasteur Institute", "New York University School of Medicine", "National Autonomous University of Mexico", "Merton College", "Lycée Saint-Louis", "Imperial College London", "Haverford College", "Harrow School", "Hamilton College", "Frederick William University", "Eötvös Loránd University", "École Polytechnique", "Dartmouth College", "Clifton College", "Christ's College", "Charles University", "Cairo University", "Beijing Normal University", "Balliol College", "Aix-Marseille University", "X Liceum Ogólnokształcące im. Królowej Jadwigi w Warszawie", "Weizmann Institute of Science", "Washington University School of Medicine", "Victoria University of Manchester", "Uniwersytet Warszawski Wydział Prawa i Administracji", "University of Würzburg", "University of Warsaw", "University of the Punjab", "University of Sydney", "University of South Africa", "University of Sheffield", "University of Pisa", "University of Pavia", "University of Oregon", "University of Madras", "University of London", "University of Leeds", "University of Lausanne", "University of Königsberg", "University of Kentucky", "University of Kansas", "University of Jena", "University of Groningen", "University of Florida", "University of East Anglia", "University of Delaware", "University of Colorado Boulder", "University of Chile", "University of California, San Francisco", "University of Calcutta", "University of Burgundy", "University of Buenos Aires", "University of Bern", "University of Adelaide", "University Laboratory High School", "United States Merchant Marine Academy", "Tsinghua University", "Trinity Hall", "Trinity College Dublin", "The Rockefeller University", "The New School", "Tepper School of Business", "Technion – Israel Institute of Technology", "Stanford Graduate School of Business", "St Columb's College", "RWTH Aachen University", "Rutgers University", "Royal Academy of Dramatic Art", "Rice University", "Queen's University Belfast", "Presidency College", "Phillips Exeter Academy", "Pennsylvania State University", "Oriel College", "Oregon State University", "Ohio State University", "Norwegian Institute of Technology", "New York University Tandon School of Engineering", "New York University School of Law", "National Southwestern Associated University", "Moscow State University, Faculty of Law", "Moscow State University", "MIT Sloan School of Management", "Mines ParisTech", "McMaster University", "Malvern College", "Lycée Lakanal", "Lycée Janson de Sailly", "Lycée Carnot", "Lafayette College", "King Edward's School", "Karl-Ferdinands-Universität", "John F. Kennedy School of Government", "Johanneum Breslau", "Johannes-Kepler-Gymnasium", "Imperial St. Petersburg University", "Hunter College", "Harvard College", "Harvard Business School", "Ghent University", "Georgia Institute of Technology", "Flying University", "Far Rockaway High School", "Faculty of Arts of Paris", "faculté de médecine de l'université de Buenos Aires", "Facultat de Física i Matemàtiques de la Universitat de Sant Petersburg", "Erasmus Hall High School", "Emmanuel College", "École des Chartes", "Earlham College", "Duke University", "Dragon School", "Delft University of Technology", "Complutense University of Madrid", "Collège Stanislas de Paris", "Colegio Nacional de Buenos Aires", "Christ Church", "Budapest University of Technology and Economics", "Bryanston School", "Boston University", "Bates College", "Antioch College", "Abraham Lincoln High School", "Zhejiang University", "Yamaguchi Prefectural Ube High School", "Yale School of Medicine", "Woking County Grammar School for Boys", "Winchester College", "Williams College", "William Adams High School", "Willamette University", "Whitman College", "West University of Timișoara", "Weill Cornell Medical", "Wauwatosa East High School", "Watchung Hills Regional High School", "Washington and Lee University", "Washburn University", "Walton High School", "Voronezh State University", "Visva-Bharati University", "Virginia Tech", "Virginia Military Institute", "Vilnius University", "Victoria University of Wellington", "Viborg Katedralskole", "Utah State University", "Ursinus College", "Urbana High School", "Upper Iowa University", "University School of Nashville", "University of Zaragoza", "University of Wisconsin–Milwaukee", "University of Westminster", "University of Western Ontario", "University of Western Australia", "University of Warwick", "University of Vermont", "University of Tokushima", "University of the West Indies", "University of Texas Southwestern Medical Center", "University of Texas at Dallas", "University of Tehran", "University of St Andrews", "University of South Dakota", "University of South Carolina", "University of Seville", "University of Saskatchewan", "University of Rostock", "University of Queensland", "University of Oulu", "University of Nottingham", "University of Notre Dame", "University of North Carolina at Chapel Hill", "University of Nice Sophia-Antipolis", "University of Nairobi", "University of Montana", "University of Missouri", "University of Mississippi", "University of Minnesota Duluth", "University of Milan", "University of Maryland", "University of Manchester Institute of Science and Technology", "University of Lyon (1896-1966)", "University of Lyon", "University of Liège", "University of Kent", "University of Illinois at Chicago", "University of Hanover", "University of Halle-Wittenberg", "University of Greenwich", "University of Fort Hare", "University of Essex", "University of Düsseldorf", "University of Dundee", "University of Dhaka", "University of Connecticut", "University of Colorado", "University of Cologne", "University of Coimbra", "University of Cincinnati College of Law", "University of Canterbury", "University of California, Santa Barbara", "University of California, Riverside", "University of Bucharest", "University of Bordeaux", "University of Bologna", "University of Algiers", "University of Alberta", "University of Aberdeen", "University College Dublin", "University College", "University at Buffalo", "Université de Montréal", "Universidad de San Carlos de Guatemala", "Universidad Complutense de Madrid-Centro Universitario Villanueva", "Universidad Central", "United States Army Command and General Staff College", "United Services College", "Tufts University School of Medicine", "TU Wien", "Toyama City Shimazono Junior High School", "Toyama Chubu High school", "Townsend Harris High School", "Tonbridge School", "Tokyo Institute of Technology", "Tohoku University", "The Judd School", "The Hague Academy of International Law", "The Fletcher School of Law and Diplomacy", "Technische Universität Darmstadt", "Technical University of Denmark", "Tampereen lyseon lukio", "Sydney Boys High School", "Stoke Brunswick School", "Stockholm School of Economics", "Stevens Institute of Technology", "Stavropol State Agrarian University", "State Elementary School Menteng 01", "St. Olaf College", "St. Martin's School", "St Thomas's Hospital Medical School", "St Hugh's College", "St George's School, Ascot", "Southern Methodist University", "Somerville College", "SOAS, University of London", "SIT Graduate Institute", "Semmelweis University", "Scuola Normale Superiore", "Sciences Po", "School of International and Public Affairs, Columbia University", "Sapienza University of Rome", "Sana'a University", "Samrat Ashok Technological Institute", "Salesian Pontifical University", "Saitama University", "Saint Petersburg State Electrotechnical University", "Rugby School", "Royal Military College, Sandhurst", "Royal Institute of Technology", "Royal Central School of Speech & Drama", "Roosevelt High School", "Rollins College", "Rockford College", "Riverdale High School", "Residencia de Estudiantes", "Rensselaer Polytechnic Institute", "Randolph–Macon College", "Rahway High School", "Radboud University Nijmegen", "Queen Mary University of London", "Punahou School", "Provo High School", "Pritzker School of Medicine", "Potchefstroom University for Christian Higher Education", "Pontifical University of Saint Thomas Aquinas", "Politecnico di Milano", "Pinsk Realschule", "Phillips Academy", "Pestalozzischule", "People's Liberation Army Academy of Art", "Pembroke College", "Peking University Health Science Center", "Paul H. Nitze School of Advanced International Studies", "Paris Law Faculty", "Paris Dauphine University", "Pantheon-Sorbonne University", "Pamer", "Paducah Tilghman High School", "Oulun Lyseon Lukio", "Osaka City University", "Ohio Wesleyan University", "Ohio University", "Occidental College", "Norwegian School of Economics", "Noelani Elementary School", "Newnham College", "Newark Academy", "New Trier High School", "New College", "Nelson College", "Naval Postgraduate School", "National University of San Marcos", "National University of La Plata", "National Taiwan University", "National Research Nuclear University", "National College of Art and Design", "National and Kapodistrian University of Athens", "Nagasaki University", "Moscow Institute of Physics and Technology", "Morehouse College", "Monrovia High School", "Mokpo Bukkyo Elementary School", "Milton Academy", "Mill Hill School", "Michigan Technological University", "Michigan State University", "Mfantsipim School", "Melbourne High School", "McGill University Faculty of Medicine", "Maximiliansgymnasium München", "Max Planck Institute for Intelligent Systems", "Marlborough College", "Marietta College", "Manchester Grammar School", "Maharaja Sayajirao University of Baroda", "Magnus Church of England School", "Magdalene College", "Madison Business College", "Lycée Michel-Montaigne", "Lycée du Parc", "Luther College", "Luitpold-Gymnasium", "Lower Canada College", "Los Angeles City College", "Leoncio Prado Military Academy", "Lebedev Physical Institute", "Leavenworth High School", "Lawrence University", "Lady Shri Ram College for Women", "Kwame Nkrumah University of Science and Technology", "Kuopion Lyseon lukio", "Kunstakademie Düsseldorf", "KU Leuven", "Konservatorium Wien", "Kobe University", "Kilmarnock Academy", "Kellogg School of Management", "Karlsruhe Institute of Technology", "Kalamazoo College", "Jumesniemen kirkko-koulu", "Jordan High School", "Jilin University", "Jesus College", "Jagiellonian University", "İstanbul Üniversitesi İletişim Fakültesi", "Istanbul School of Medicine", "Ioffe Institute", "International Institute of Human Rights", "Institución Libre de Enseñanza", "Indiana University Bloomington", "Indiana University", "Imperial University of Dorpat", "Imperial Alexander University", "Illinois Institute of Technology", "Hyde Park Academy High School", "Howard University", "Hotchkiss School", "Hope College", "Homeschooling", "Hokkaido University", "Högre lärarinneseminariet", "Hibiya High School", "Haukijärven koulu", "Harvard School of Engineering and Applied Sciences", "Harvard Law School", "Hadassah Medical Center", "Gymnasium Andreanum", "Guy's Hospital", "Grinnell College", "Grenoble Alpes University", "Graduate Institute of International and Development Studies", "Government College University", "Germantown Friends School", "Georgia Southwestern State University", "George Washington University Medical School", "George Washington University", "fysikfakulteten vid Moskvas institut för fysik och teknologi", "Furman University", "Fukuoka Prefectural Fukuoka High School", "Fru Ragna Nielsens' skole", "Friends' Central School", "Friends University", "Free University of Brussels", "Fettes College", "Fasori Gimnázium", "Faculty of Philosophy of the Jagiellonian University", "Faculty of Humanities and Social Sciences, University of Zagreb", "Exeter College", "Eton College", "ESPCI ParisTech", "Escuela Técnica Superior de Ingenieros de Caminos", "Erasmus University Rotterdam", "Elisabet-Gymnasium", "Egyptian Military Academy", "Edgbaston High School", "École supérieure de chimie physique électronique de Lyon", "École pratique des hautes études", "École du Louvre", "École des Ponts ParisTech", "École alsacienne", "Eberhard-Ludwigs-Gymnasium", "Eastern Mennonite University", "Dominican Convent High School", "Döblinška gimnazija", "DePauw University", "Deerfield Academy", "Davidson College", "Darwin College", "Dalhousie University", "Czech Technical University in Prague", "Cumberland School of Law", "Crozer Theological Seminary", "Cours Hattemer", "Corvallis High School", "Corpus Christi College", "Cornell University College of Engineering", "Cornell University College of Agriculture and Life Sciences", "Cooper Union", "Columbia University School of General Studies", "Columbia University College of Pharmacy", "Columbia Law School", "Colorado College", "College of Wooster", "College of West Africa", "College of the Holy Cross", "Collège Calvin", "Clare College", "Christianeum Hamburg", "Choate Rosemary Hall", "Cheltenham College", "Chalmers University of Technology", "Chadron State College", "Catholic University of Leuven", "Carnegie Institute of Technology", "Bryn Mawr College", "Brown University", "Brooklyn College", "Bristol Grammar School", "Brigham Young University", "Brera Academy", "Brasenose College", "Brandeis University", "Bradfield College", "Boston University School of Theology", "Bootham School", "Booth School of Business", "Berlin University of the Arts", "Berkshire School", "Berea College", "Benedictine College", "Belarusian State University", "Beijing University of Chinese Medicine", "Beijing Foreign Studies University", "Bedford School", "Basic Education High School No. 1 Dagon", "Barts and The London School of Medicine and Dentistry", "Bangor University", "Baku State University", "Australian National University", "Augustana College", "Augsburg University", "Antioch University", "Alte Kantonsschule Aarau", "Alexandria University", "Akademické gymnázium Štěpánská", "Acadia University", "Academy of Fine Arts, Munich", "Aberystwyth University"];
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            var name_score = 0 ;
+            var gender_score = 10;
+            var age_score = 0;
+            var country_score = 0;
+            var religion_score = 0;
+            var occurance_score = 0;
+            var university_score = 0;
+            var award_score = 0;
+            if(names.indexOf(name.value)>-1){name_score=12.5*(names.length-names.indexOf(name.value))/(names.length);}
+            if(gender.value=="Female"){gender_score=2.5;}
+            if(ages.indexOf(age.value)>-1){age_score=12.5*(ages.length-ages.indexOf(age.value))/(ages.length);}
+            if(countries.indexOf(country.value)>-1){country_score=12.5*(countries.length-countries.indexOf(country.value))/(countries.length);}
+            if(religions.indexOf(religion.value)>-1){religion_score=12.5*(religions.length-religions.indexOf(religion.value))/(religions.length);}
+            if(occurances.indexOf(occurance.value)>-1){occurance_score=12.5*(occurances.length-occurances.indexOf(occurance.value))/(occurances.length);}
+            if(universities.indexOf(university.value)>-1){university_score=12.5*(universities.length-universities.indexOf(university.value))/(universities.length);}
+            if(award.value=="Chemistry"){award_score=2.5;}
+            if(award.value=="Economic Sciences"){award_score=1.12;}
+            if(award.value=="Literature"){award_score=1.562;}
+            if(award.value=="Peace"){award_score=1.438;}
+            if(award.value=="Physics"){award_score=2.9;}
+            if(award.value=="Physiology or Medicine"){award_score=2.97;}
+            var total_score=name_score+age_score+gender_score+country_score+religion_score+occurance_score+university_score+award_score;
+            window.alert("Your chances are: "+total_score+"% !");
+            var results=[age_score,country_score,occurance_score,university_score];
+            results.sort(function(a, b){return a - b});
+            if(results[0]==age_score){window.alert("in age of 63, your chances will be "+(total_score-age_score+12.5)+"% !");}
+            if(results[0]==country_score){window.alert("if you will move to USA, your chances will be "+(total_score-country_score+12.5)+"% !");}
+            if(results[0]==occurance_score){window.alert("if you change your occurance to University Teacher, your chances will be "+(total_score-occurance_score+12.5)+"% !");}
+            if(results[0]==university_score){window.alert("if you will go to Harvard University, your chances will be "+(total_score-university_score+12.5)+"% !");}
+            return false; 
+        }</script> 
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/logo.svg" alt="" /></span>
+						<h1>Nobel Laureates</h1>
+						<p>Digital Humanities Project BGU<br />
+						made by Amir Abramovich and Dean Caspy.</p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Introduction</a></li>
+							<li><a href="#first">Most Common Names</a></li>
+							<li><a href="#second">Gender Comparison</a></li>
+							<li><a href="#cataaa">Country Comparison</a></li>
+							<li><a href="#cate">Education Comparison</a></li>
+							<li><a href="#fota">Your Chances to Win!</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Introduction</h2>
+										</header>
+										<p>The Nobel Prize is a set of annual international awards bestowed in several categories by Swedish and Norwegian institutions in recognition of academic, cultural, or scientific advances. <br>Between 1901 and 2018, the Nobel Prizes (and the Prizes in Economic Sciences, from 1969 on) were awarded to 908 people. <br> As of 2018, the Nobel Prize has been awarded to women 52 times. Only one woman, Marie Curie, has been honoured twice. <br>This means that 51 women in total have been awarded the Nobel Prize between 1901 and 2018.
+										</p>
+									</div>
+								</div>
+							</section>
+
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>The most common names for nobel laureates</h2>
+								</header>
+								
+								<p><script type='text/javascript' charset='utf-8'  src='https://worditout.com/word-cloud/3590324/private/a36fc772b41d178eb7570e98da5a93cc/embed.js'></script></p>
+								<h3>We can see that the most common name is John, and Robert afterwards. <br>This clound contains most 164 common names.</h3>
+							</section>
+
+						<!-- Second Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>Gender Comparison</h2></header>
+								<p class="content">Columns:<iframe id="datawrapper-chart-U7Oeg" src="https://datawrapper.dwcdn.net/U7Oeg/6/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important;" height="332"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["U7Oeg"]={},window.datawrapper["U7Oeg"].embedDeltas={"100":449,"200":396,"300":357,"400":332,"500":332,"700":332,"800":332,"900":332,"1000":332},window.datawrapper["U7Oeg"].iframe=document.getElementById("datawrapper-chart-U7Oeg"),window.datawrapper["U7Oeg"].iframe.style.height=window.datawrapper["U7Oeg"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["U7Oeg"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("U7Oeg"==b)window.datawrapper["U7Oeg"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>Donuts:<iframe id="datawrapper-chart-7AzQQ" src="https://datawrapper.dwcdn.net/7AzQQ/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important;" height="403"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["7AzQQ"]={},window.datawrapper["7AzQQ"].embedDeltas={"100":520,"200":467,"300":428,"400":403,"500":403,"700":403,"800":403,"900":403,"1000":403},window.datawrapper["7AzQQ"].iframe=document.getElementById("datawrapper-chart-7AzQQ"),window.datawrapper["7AzQQ"].iframe.style.height=window.datawrapper["7AzQQ"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["7AzQQ"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("7AzQQ"==b)window.datawrapper["7AzQQ"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script></p>
+								
+							</section>
+
+						<!-- Get Started -->
+							<section id="cta" class="main special">
+								<header class="major">
+									<h2>Increasement of Women Nobel Laureates</h2>
+									<p><iframe id="datawrapper-chart-ewhDo" src="https://datawrapper.dwcdn.net/ewhDo/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["ewhDo"]={},window.datawrapper["ewhDo"].embedDeltas={"100":567,"200":464,"300":425,"400":400,"500":400,"700":400,"800":400,"900":400,"1000":400},window.datawrapper["ewhDo"].iframe=document.getElementById("datawrapper-chart-ewhDo"),window.datawrapper["ewhDo"].iframe.style.height=window.datawrapper["ewhDo"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["ewhDo"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("ewhDo"==b)window.datawrapper["ewhDo"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script><br>First is that we are indeed awarding research, where discoveries were made in the 70s, 80s, early 90s, during a time when we had much more of a gender bias in economics as well as in many other sciences. It basically means that, as time goes by, the fraction of women Nobel laureates will increase. </p>
+								</header>
+							</section>
+							<section id="cataaa" class="main special">
+								<header class="major">
+									<h2>Born Places of Nobel Laureates</h2>
+									<p><iframe id="datawrapper-chart-FgMnN" src="https://datawrapper.dwcdn.net/FgMnN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["FgMnN"]={},window.datawrapper["FgMnN"].iframe=document.getElementById("datawrapper-chart-FgMnN"),window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("FgMnN"==b)window.datawrapper["FgMnN"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script><br>Most of the laureates are from USA (379!), UK on the second place with 151 laureates, Germany in third place, and France and Sweden afterwards.</p>
+								</header>
+							</section>
+							<section id="cata" class="main special">
+								<header class="major">
+									<h2>Age of Nobel Laureates</h2>
+									<p><iframe id="datawrapper-chart-EXufu" src="https://datawrapper.dwcdn.net/EXufu/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important;" height="386"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var t in a.data["datawrapper-height"]){var e=document.getElementById("datawrapper-chart-"+t);e&&(e.style.height=a.data["datawrapper-height"][t]+"px")}})}();</script>
+									<br>The youngest laureate was 17 years old, the oldest was 96 years old, most of the laureates were at age of 63 and the average age of the laureates is 60. </p>
+								</header>
+							</section>
+							<section id="catr" class="main special">
+								<header class="major">
+									<h2>Religion of Nobel Laureates</h2>
+									<p><iframe id="datawrapper-chart-rNMGf" src="https://datawrapper.dwcdn.net/rNMGf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 60% !important;" height="596"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var t in a.data["datawrapper-height"]){var e=document.getElementById("datawrapper-chart-"+t);e&&(e.style.height=a.data["datawrapper-height"][t]+"px")}})}();</script>
+									<br>78 of the laureates are atheists, 59 are christians and 21 are jewish.</p>
+								</header>
+							</section>
+							<section id="cate" class="main special">
+								<header class="major">
+									<h2>Education of Nobel Laureates</h2>
+									<p><script type='text/javascript' charset='utf-8' src='https://worditout.com/word-cloud/3598823/embed.js'></script>
+									<br>68 laureates came from Havard University, 49 from Colombia, and 35 from Massachusetts Institute and Chicago University.</p>
+								</header>
+							</section>
+							<section id="cato" class="main special">
+								<header class="major">
+									<h2>Occupation of Nobel Laureates</h2>
+									<p><iframe id="datawrapper-chart-7qsgN" src="https://datawrapper.dwcdn.net/7qsgN/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var t in a.data["datawrapper-height"]){var e=document.getElementById("datawrapper-chart-"+t);e&&(e.style.height=a.data["datawrapper-height"][t]+"px")}})}();</script><br>The most common occupation is university teacher.<br>Did you know that there is a football player who won the Nobel prize and almost an olympic medal? </p>
+								</header>
+							</section>
+							
+							<section id="fota" class="main special">
+                                                            <header class="major">
+                                                                <h2>Lets check what are your chances to be a Nobel laureate! </h2>
+                                                                <form name="RegForm" action="#" onsubmit="return validation()" method="post"> 
+                                                                    <div class="row gtr-uniform">
+                                                                            <div class="col-6 col-12-xsmall">
+                                                                                    <input type="text" name="form-name" id="form-name" value="" placeholder="Name" />
+                                                                            </div>
+                                                                            <div class="col-6 col-12-xsmall">
+                                                                                    <select name="gender" id="form-gender">
+                                                                                            <option value="">- Gender -</option>
+                                                                                            <option value="Male">Male</option>
+                                                                                            <option value="Female">Female</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="col-6 col-12-xsmall">
+                                                                                    <input type="text" name="form-age" id="form-age" value="" placeholder="Age" />
+                                                                            </div>
+                                                                            <div class="col-6 col-12-xsmall">
+                                                                                    <select name="country" id="form-country">
+                                                                                            <option value="">- Country -</option>
+                                                                                            <option value="Albania">Albania</option>
+                                                                                            <option value="Argentina">Argentina</option>
+                                                                                            <option value="Australia">Australia</option>
+                                                                                            <option value="Austria">Austria</option>
+                                                                                            <option value="Bangladesh">Bangladesh</option>
+                                                                                            <option value="Belarus">Belarus</option>
+                                                                                            <option value="Belgium">Belgium</option>
+                                                                                            <option value="Brazil">Brazil</option>
+                                                                                            <option value="Canada">Canada</option>
+                                                                                            <option value="Chile">Chile</option>
+                                                                                            <option value="China">China</option>
+                                                                                            <option value="Colombia">Colombia</option>
+                                                                                            <option value="Costa Rica">Costa Rica</option>
+                                                                                            <option value="Croatia">Croatia</option>
+                                                                                            <option value="Cyprus">Cyprus</option>
+                                                                                            <option value="Czech Republic">Czech Republic</option>
+                                                                                            <option value="Denmark">Denmark</option>
+                                                                                            <option value="Egypt">Egypt</option>
+                                                                                            <option value="Estonia">Estonia</option>
+                                                                                            <option value="Finland">Finland</option>
+                                                                                            <option value="France">France</option>
+                                                                                            <option value="Germany">Germany</option>
+                                                                                            <option value="Ghana">Ghana</option>
+                                                                                            <option value="Greece">Greece</option>
+                                                                                            <option value="Guatemala">Guatemala</option>
+                                                                                            <option value="Hungary">Hungary</option>
+                                                                                            <option value="Iceland">Iceland</option>
+                                                                                            <option value="India">India</option>
+                                                                                            <option value="Iran">Iran</option>
+                                                                                            <option value="Ireland">Ireland</option>
+                                                                                            <option value="Israel">Israel</option>
+                                                                                            <option value="Italy">Italy</option>
+                                                                                            <option value="Japan">Japan</option>
+                                                                                            <option value="Kenya">Kenya</option>
+                                                                                            <option value="Liberia">Liberia</option>
+                                                                                            <option value="Lithuania">Lithuania</option>
+                                                                                            <option value="Mauritius">Mauritius</option>
+                                                                                            <option value="Mexico">Mexico</option>
+                                                                                            <option value="Myanmar">Myanmar</option>
+                                                                                            <option value="New Zealand">New Zealand</option>
+                                                                                            <option value="Nigeria">Nigeria</option>
+                                                                                            <option value="Norway">Norway</option>
+                                                                                            <option value="Peru">Peru</option>
+                                                                                            <option value="Poland">Poland</option>
+                                                                                            <option value="Portugal">Portugal</option>
+                                                                                            <option value="Prussia">Prussia</option>
+                                                                                            <option value="Romania">Romania</option>
+                                                                                            <option value="South Africa">South Africa</option>
+                                                                                            <option value="South Korea">South Korea</option>
+                                                                                            <option value="Spain">Spain</option>
+                                                                                            <option value="Sweden">Sweden</option>
+                                                                                            <option value="Switzerland">Switzerland</option>
+                                                                                            <option value="Tibet">Tibet</option>
+                                                                                            <option value="Turkey">Turkey</option>
+                                                                                            <option value="Ukraine">Ukraine</option>
+                                                                                            <option value="United Arab Republic">United Arab Republic</option>
+                                                                                            <option value="United Kingdom">United Kingdom</option>
+                                                                                            <option value="United States of America">United States of America</option>
+                                                                                            <option value="Venezuela">Venezuela</option>
+                                                                                            <option value="Vietnam">Vietnam</option>
+                                                                                            <option value="Yemen">Yemen</option>
+                                                                                            <option value="Yugoslavia">Yugoslavia</option>
+                                                                                            <option value="Other">Other</option></select>
+                                                                                    </div>
+                                                                                    <div class="col-6 col-12-xsmall">
+                                                                                     <select name="religion" id="form-religion">
+                                                                                            <option value="">- Religion -</option>
+                                                                                            <option value="Agnosticism">Agnosticism</option>
+                                                                                            <option value="Anglicanism">Anglicanism</option>
+                                                                                            <option value="Atheism">Atheism</option>
+                                                                                            <option value="Baptists">Baptists</option>
+                                                                                            <option value="Buddhism">Buddhism</option>
+                                                                                            <option value="Calvinism">Calvinism</option>
+                                                                                            <option value="Christianity">Christianity</option>
+                                                                                            <option value="Congregationalist">Congregationalist polity</option>
+                                                                                            <option value="Deism">Deism</option>
+                                                                                            <option value="Hinduism">Hinduism</option>
+                                                                                            <option value="Islam">Islam</option>
+                                                                                            <option value="Judaism">Judaism</option>
+                                                                                            <option value="Lutheranism">Lutheranism</option>
+                                                                                            <option value="Methodism">Methodism</option>
+                                                                                            <option value="Mormonism">Mormonism</option>
+                                                                                            <option value="Presbyterianism">Presbyterianism</option>
+                                                                                            <option value="Sikhism">Sikhism</option>
+                                                                                            <option value="Theravada">Theravada</option>
+                                                                                            <option value="Unitarianism">Unitarianism</option>
+                                                                                            <option value="Viral">Viral</option>
+                                                                                            <option value="Other">Other</option>
+                                                                                    </select></div>
+                                                                                    <div class="col-6 col-12-xsmall">
+                                                                                    <select name="occurance" id="form-occurance">
+                                                                                            <option value="">- Occurance -</option>
+                                                                                            <option value="Academic Lecturer">Academic Lecturer</option>
+                                                                                            <option value="Actor">Actor</option>
+                                                                                            <option value="Agriculturer">Agriculturer</option>
+                                                                                            <option value="Altar Server">Altar Server</option>
+                                                                                            <option value="Analytic Philosopher">Analytic Philosopher</option>
+                                                                                            <option value="Anatomist">Anatomist</option>
+                                                                                            <option value="Anthropologist">Anthropologist</option>
+                                                                                            <option value="Aphorist">Aphorist</option>
+                                                                                            <option value="Architect">Architect</option>
+                                                                                            <option value="Art Critic">Art Critic</option>
+                                                                                            <option value="Artificial Intelligence Researcher">Artificial Intelligence Researcher</option>
+                                                                                            <option value="Artist">Artist</option>
+                                                                                            <option value="Astronomer">Astronomer</option>
+                                                                                            <option value="Astrophysicist">Astrophysicist</option>
+                                                                                            <option value="Athlete">Athlete</option>
+                                                                                            <option value="Author">Author</option>
+                                                                                            <option value="Autobiographer">Autobiographer</option>
+                                                                                            <option value="Bacteriologist">Bacteriologist</option>
+                                                                                            <option value="Banker">Banker</option>
+                                                                                            <option value="Beekeeper">Beekeeper</option>
+                                                                                            <option value="Bibliographer">Bibliographer</option>
+                                                                                            <option value="Biochemist">Biochemist</option>
+                                                                                            <option value="Biographer">Biographer</option>
+                                                                                            <option value="Biologist">Biologist</option>
+                                                                                            <option value="Biophysicist">Biophysicist</option>
+                                                                                            <option value="Biotechnologist">Biotechnologist</option>
+                                                                                            <option value="Blogger">Blogger</option>
+                                                                                            <option value="Botanist">Botanist</option>
+                                                                                            <option value="Business Executive">Business Executive</option>
+                                                                                            <option value="Businessperson">Businessperson</option>
+                                                                                            <option value="Cardiologist">Cardiologist</option>
+                                                                                            <option value="Catholic Priest">Catholic Priest</option>
+                                                                                            <option value="Cell Biologist">Cell Biologist</option>
+                                                                                            <option value="Chemist">Chemist</option>
+                                                                                            <option value="Children'S Writer">Children'S Writer</option>
+                                                                                            <option value="Chronicler">Chronicler</option>
+                                                                                            <option value="Civil Engineer">Civil Engineer</option>
+                                                                                            <option value="Civil Rights Advocate">Civil Rights Advocate</option>
+                                                                                            <option value="Classical Archaeologist">Classical Archaeologist</option>
+                                                                                            <option value="Classical Scholar">Classical Scholar</option>
+                                                                                            <option value="Columnist">Columnist</option>
+                                                                                            <option value="Composer">Composer</option>
+                                                                                            <option value="Computer Scientist">Computer Scientist</option>
+                                                                                            <option value="Conscientious Objector">Conscientious Objector</option>
+                                                                                            <option value="Contributing Editor">Contributing Editor</option>
+                                                                                            <option value="Correspondent">Correspondent</option>
+                                                                                            <option value="Cosmologist">Cosmologist</option>
+                                                                                            <option value="Cricketer">Cricketer</option>
+                                                                                            <option value="Critic">Critic</option>
+                                                                                            <option value="Crystallographer">Crystallographer</option>
+                                                                                            <option value="Curator">Curator</option>
+                                                                                            <option value="Diarist">Diarist</option>
+                                                                                            <option value="Diplomat">Diplomat</option>
+                                                                                            <option value="Director General">Director General</option>
+                                                                                            <option value="Disc Jockey">Disc Jockey</option>
+                                                                                            <option value="Dramaturge">Dramaturge</option>
+                                                                                            <option value="Economist">Economist</option>
+                                                                                            <option value="Editor">Editor</option>
+                                                                                            <option value="Educator">Educator</option>
+                                                                                            <option value="Electrician">Electrician</option>
+                                                                                            <option value="Engineer">Engineer</option>
+                                                                                            <option value="Entomologist">Entomologist</option>
+                                                                                            <option value="Entrepreneur">Entrepreneur</option>
+                                                                                            <option value="Epigrapher">Epigrapher</option>
+                                                                                            <option value="Epistemologist">Epistemologist</option>
+                                                                                            <option value="Esperantist">Esperantist</option>
+                                                                                            <option value="Essayist">Essayist</option>
+                                                                                            <option value="Ethologist">Ethologist</option>
+                                                                                            <option value="Existentialist">Existentialist</option>
+                                                                                            <option value="Explorer">Explorer</option>
+                                                                                            <option value="Feminist">Feminist</option>
+                                                                                            <option value="Film Actor">Film Actor</option>
+                                                                                            <option value="Film Director">Film Director</option>
+                                                                                            <option value="Film Producer">Film Producer</option>
+                                                                                            <option value="Financier">Financier</option>
+                                                                                            <option value="Geneticist">Geneticist</option>
+                                                                                            <option value="Geopolitician">Geopolitician</option>
+                                                                                            <option value="Graphic Artist">Graphic Artist</option>
+                                                                                            <option value="Guitarist">Guitarist</option>
+                                                                                            <option value="Hematologist">Hematologist</option>
+                                                                                            <option value="Historian">Historian</option>
+                                                                                            <option value="Humanitarian">Humanitarian</option>
+                                                                                            <option value="Hymnwriter">Hymnwriter</option>
+                                                                                            <option value="Ice Hockey Player">Ice Hockey Player</option>
+                                                                                            <option value="Illustrator">Illustrator</option>
+                                                                                            <option value="Immunologist">Immunologist</option>
+                                                                                            <option value="Intellectual">Intellectual</option>
+                                                                                            <option value="Internist">Internist</option>
+                                                                                            <option value="Inventor">Inventor</option>
+                                                                                            <option value="Journalist">Journalist</option>
+                                                                                            <option value="Judaic Scholar">Judaic Scholar</option>
+                                                                                            <option value="Judge">Judge</option>
+                                                                                            <option value="Jurist">Jurist</option>
+                                                                                            <option value="Jurist-Consultant">Jurist-Consultant</option>
+                                                                                            <option value="Lacrosse Player">Lacrosse Player</option>
+                                                                                            <option value="Lawyer">Lawyer</option>
+                                                                                            <option value="Legal Historian">Legal Historian</option>
+                                                                                            <option value="Librarian">Librarian</option>
+                                                                                            <option value="Librettist">Librettist</option>
+                                                                                            <option value="Linguist">Linguist</option>
+                                                                                            <option value="Literary Critic">Literary Critic</option>
+                                                                                            <option value="Logician">Logician</option>
+                                                                                            <option value="Lyricist">Lyricist</option>
+                                                                                            <option value="Mathematician">Mathematician</option>
+                                                                                            <option value="Medievalist">Medievalist</option>
+                                                                                            <option value="Memoirist">Memoirist</option>
+                                                                                            <option value="Merchant">Merchant</option>
+                                                                                            <option value="Metaphysician">Metaphysician</option>
+                                                                                            <option value="Meteorologist">Meteorologist</option>
+                                                                                            <option value="Microbiologist">Microbiologist</option>
+                                                                                            <option value="Military Officer">Military Officer</option>
+                                                                                            <option value="Military Personnel">Military Personnel</option>
+                                                                                            <option value="Military Physician">Military Physician</option>
+                                                                                            <option value="Minister">Minister</option>
+                                                                                            <option value="Molecular Biologist">Molecular Biologist</option>
+                                                                                            <option value="Mountaineer">Mountaineer</option>
+                                                                                            <option value="Music Historian">Music Historian</option>
+                                                                                            <option value="Musicologist">Musicologist</option>
+                                                                                            <option value="Neurologist">Neurologist</option>
+                                                                                            <option value="Neuroscientist">Neuroscientist</option>
+                                                                                            <option value="Neurosurgeon">Neurosurgeon</option>
+                                                                                            <option value="Non-Fiction Writer">Non-Fiction Writer</option>
+                                                                                            <option value="Novelist">Novelist</option>
+                                                                                            <option value="Nuclear Scientist">Nuclear Scientist</option>
+                                                                                            <option value="Numismatist">Numismatist</option>
+                                                                                            <option value="Nun">Nun</option>
+                                                                                            <option value="Oncologist">Oncologist</option>
+                                                                                            <option value="Ontologist">Ontologist</option>
+                                                                                            <option value="Ophthalmologist">Ophthalmologist</option>
+                                                                                            <option value="Opinion Journalist">Opinion Journalist</option>
+                                                                                            <option value="Organist">Organist</option>
+                                                                                            <option value="Ornithologist">Ornithologist</option>
+                                                                                            <option value="Pacifist">Pacifist</option>
+                                                                                            <option value="Painter">Painter</option>
+                                                                                            <option value="Parasitologist">Parasitologist</option>
+                                                                                            <option value="Pastor">Pastor</option>
+                                                                                            <option value="Pathologist">Pathologist</option>
+                                                                                            <option value="Peace Activist">Peace Activist</option>
+                                                                                            <option value="Pedagogue">Pedagogue</option>
+                                                                                            <option value="Percussionist">Percussionist</option>
+                                                                                            <option value="Pharmacist">Pharmacist</option>
+                                                                                            <option value="Pharmacologist">Pharmacologist</option>
+                                                                                            <option value="Philosopher">Philosopher</option>
+                                                                                            <option value="Photographer">Photographer</option>
+                                                                                            <option value="Physical Chemist">Physical Chemist</option>
+                                                                                            <option value="Physician">Physician</option>
+                                                                                            <option value="Physicist">Physicist</option>
+                                                                                            <option value="Physiologist">Physiologist</option>
+                                                                                            <option value="Pianist">Pianist</option>
+                                                                                            <option value="Playwright">Playwright</option>
+                                                                                            <option value="Poet">Poet</option>
+                                                                                            <option value="Poet Lawyer">Poet Lawyer</option>
+                                                                                            <option value="Polar Explorer">Polar Explorer</option>
+                                                                                            <option value="Politician">Politician</option>
+                                                                                            <option value="Polymath">Polymath</option>
+                                                                                            <option value="Preacher">Preacher</option>
+                                                                                            <option value="Prelate">Prelate</option>
+                                                                                            <option value="President">President</option>
+                                                                                            <option value="Professor">Professor</option>
+                                                                                            <option value="Prosaist">Prosaist</option>
+                                                                                            <option value="Prose">Prose</option>
+                                                                                            <option value="Psychiatrist">Psychiatrist</option>
+                                                                                            <option value="Psychologist">Psychologist</option>
+                                                                                            <option value="Publisher">Publisher</option>
+                                                                                            <option value="Pundit">Pundit</option>
+                                                                                            <option value="Quantum Physicist">Quantum Physicist</option>
+                                                                                            <option value="Record Producer">Record Producer</option>
+                                                                                            <option value="Researcher">Researcher</option>
+                                                                                            <option value="Resistance Fighter">Resistance Fighter</option>
+                                                                                            <option value="Satirist">Satirist</option>
+                                                                                            <option value="Scenographer">Scenographer</option>
+                                                                                            <option value="Scientist">Scientist</option>
+                                                                                            <option value="Screenwriter">Screenwriter</option>
+                                                                                            <option value="Sculptor">Sculptor</option>
+                                                                                            <option value="Short Story Writer">Short Story Writer</option>
+                                                                                            <option value="Singer">Singer</option>
+                                                                                            <option value="Sociologist">Sociologist</option>
+                                                                                            <option value="Songwriter">Songwriter</option>
+                                                                                            <option value="Stage Actor">Stage Actor</option>
+                                                                                            <option value="Statesperson">Statesperson</option>
+                                                                                            <option value="Statistician">Statistician</option>
+                                                                                            <option value="Suffragette">Suffragette</option>
+                                                                                            <option value="Surgeon">Surgeon</option>
+                                                                                            <option value="Teacher">Teacher</option>
+                                                                                            <option value="Theatre Director">Theatre Director</option>
+                                                                                            <option value="Theologian">Theologian</option>
+                                                                                            <option value="Theoretical Physicist">Theoretical Physicist</option>
+                                                                                            <option value="Toxicologist">Toxicologist</option>
+                                                                                            <option value="Trade Unionist">Trade Unionist</option>
+                                                                                            <option value="Translator">Translator</option>
+                                                                                            <option value="University Teacher">University Teacher</option>
+                                                                                            <option value="Urologist">Urologist</option>
+                                                                                            <option value="Veterinarian">Veterinarian</option>
+                                                                                            <option value="Virologist">Virologist</option>
+                                                                                            <option value="Writer">Writer</option>
+                                                                                            <option value="Zoologist">Zoologist</option>
+                                                                                            <option value="Other">Other</option>
+                                                                                    </select></div>
+                                                                                    <div class="col-6 col-12-xsmall">
+                                                                                    <select name="university" id="form-university">
+                                                                                            <option value="">- University -</option>
+                                                                                            <option value="Aberystwyth University">Aberystwyth University</option>
+                                                                                            <option value="Abraham Lincoln High School">Abraham Lincoln High School</option>
+                                                                                            <option value="Academy of Fine Arts, Munich">Academy of Fine Arts, Munich</option>
+                                                                                            <option value="Acadia University">Acadia University</option>
+                                                                                            <option value="Aix-Marseille University">Aix-Marseille University</option>
+                                                                                            <option value="Akademické gymnázium Štěpánská">Akademické gymnázium Štěpánská</option>
+                                                                                            <option value="Alexandria University">Alexandria University</option>
+                                                                                            <option value="Alte Kantonsschule Aarau">Alte Kantonsschule Aarau</option>
+                                                                                            <option value="Amherst College">Amherst College</option>
+                                                                                            <option value="Antioch College">Antioch College</option>
+                                                                                            <option value="Antioch University">Antioch University</option>
+                                                                                            <option value="Augsburg University">Augsburg University</option>
+                                                                                            <option value="Augustana College">Augustana College</option>
+                                                                                            <option value="Australian National University">Australian National University</option>
+                                                                                            <option value="Baku State University">Baku State University</option>
+                                                                                            <option value="Balliol College">Balliol College</option>
+                                                                                            <option value="Bangor University">Bangor University</option>
+                                                                                            <option value="Basic Education High School No. 1 Dagon">Basic Education High School No. 1 Dagon</option>
+                                                                                            <option value="Bates College">Bates College</option>
+                                                                                            <option value="Bedford School">Bedford School</option>
+                                                                                            <option value="Beijing Foreign Studies University">Beijing Foreign Studies University</option>
+                                                                                            <option value="Beijing Normal University">Beijing Normal University</option>
+                                                                                            <option value="Beijing University of Chinese Medicine">Beijing University of Chinese Medicine</option>
+                                                                                            <option value="Belarusian State University">Belarusian State University</option>
+                                                                                            <option value="Benedictine College">Benedictine College</option>
+                                                                                            <option value="Berea College">Berea College</option>
+                                                                                            <option value="Berkshire School">Berkshire School</option>
+                                                                                            <option value="Berlin University of the Arts">Berlin University of the Arts</option>
+                                                                                            <option value="Booth School of Business">Booth School of Business</option>
+                                                                                            <option value="Bootham School">Bootham School</option>
+                                                                                            <option value="Boston University">Boston University</option>
+                                                                                            <option value="Boston University School of Theology">Boston University School of Theology</option>
+                                                                                            <option value="Bradfield College">Bradfield College</option>
+                                                                                            <option value="Brandeis University">Brandeis University</option>
+                                                                                            <option value="Brasenose College">Brasenose College</option>
+                                                                                            <option value="Brera Academy">Brera Academy</option>
+                                                                                            <option value="Brigham Young University">Brigham Young University</option>
+                                                                                            <option value="Bristol Grammar School">Bristol Grammar School</option>
+                                                                                            <option value="Brooklyn College">Brooklyn College</option>
+                                                                                            <option value="Brown University">Brown University</option>
+                                                                                            <option value="Bryanston School">Bryanston School</option>
+                                                                                            <option value="Bryn Mawr College">Bryn Mawr College</option>
+                                                                                            <option value="Budapest University of Technology and Economics">Budapest University of Technology and Economics</option>
+                                                                                            <option value="Cairo University">Cairo University</option>
+                                                                                            <option value="California Institute of Technology">California Institute of Technology</option>
+                                                                                            <option value="Carnegie Institute of Technology">Carnegie Institute of Technology</option>
+                                                                                            <option value="Carnegie Mellon University">Carnegie Mellon University</option>
+                                                                                            <option value="Case Western Reserve University">Case Western Reserve University</option>
+                                                                                            <option value="Catholic University of Leuven">Catholic University of Leuven</option>
+                                                                                            <option value="Chadron State College">Chadron State College</option>
+                                                                                            <option value="Chalmers University of Technology">Chalmers University of Technology</option>
+                                                                                            <option value="Charles University">Charles University</option>
+                                                                                            <option value="Cheltenham College">Cheltenham College</option>
+                                                                                            <option value="Choate Rosemary Hall">Choate Rosemary Hall</option>
+                                                                                            <option value="Christ Church">Christ Church</option>
+                                                                                            <option value="Christ's College">Christ's College</option>
+                                                                                            <option value="Christianeum Hamburg">Christianeum Hamburg</option>
+                                                                                            <option value="City College of New York">City College of New York</option>
+                                                                                            <option value="Clare College">Clare College</option>
+                                                                                            <option value="Clifton College">Clifton College</option>
+                                                                                            <option value="Colegio Nacional de Buenos Aires">Colegio Nacional de Buenos Aires</option>
+                                                                                            <option value="Collège Calvin">Collège Calvin</option>
+                                                                                            <option value="College of the Holy Cross">College of the Holy Cross</option>
+                                                                                            <option value="College of West Africa">College of West Africa</option>
+                                                                                            <option value="College of Wooster">College of Wooster</option>
+                                                                                            <option value="Collège Stanislas de Paris">Collège Stanislas de Paris</option>
+                                                                                            <option value="Colorado College">Colorado College</option>
+                                                                                            <option value="Columbia Law School">Columbia Law School</option>
+                                                                                            <option value="Columbia University">Columbia University</option>
+                                                                                            <option value="Complutense University of Madrid">Complutense University of Madrid</option>
+                                                                                            <option value="Cooper Union">Cooper Union</option>
+                                                                                            <option value="Cornell University">Cornell University</option>
+                                                                                            <option value="Corpus Christi College">Corpus Christi College</option>
+                                                                                            <option value="Corvallis High School">Corvallis High School</option>
+                                                                                            <option value="Cours Hattemer">Cours Hattemer</option>
+                                                                                            <option value="Crozer Theological Seminary">Crozer Theological Seminary</option>
+                                                                                            <option value="Cumberland School of Law">Cumberland School of Law</option>
+                                                                                            <option value="Czech Technical University in Prague">Czech Technical University in Prague</option>
+                                                                                            <option value="Dalhousie University">Dalhousie University</option>
+                                                                                            <option value="Dartmouth College">Dartmouth College</option>
+                                                                                            <option value="Darwin College">Darwin College</option>
+                                                                                            <option value="Davidson College">Davidson College</option>
+                                                                                            <option value="Deerfield Academy">Deerfield Academy</option>
+                                                                                            <option value="Delft University of Technology">Delft University of Technology</option>
+                                                                                            <option value="DePauw University">DePauw University</option>
+                                                                                            <option value="Döblinška gimnazija">Döblinška gimnazija</option>
+                                                                                            <option value="Dominican Convent High School">Dominican Convent High School</option>
+                                                                                            <option value="Dragon School">Dragon School</option>
+                                                                                            <option value="Duke University">Duke University</option>
+                                                                                            <option value="Earlham College">Earlham College</option>
+                                                                                            <option value="Eastern Mennonite University">Eastern Mennonite University</option>
+                                                                                            <option value="Eberhard-Ludwigs-Gymnasium">Eberhard-Ludwigs-Gymnasium</option>
+                                                                                            <option value="École alsacienne">École alsacienne</option>
+                                                                                            <option value="École des Chartes">École des Chartes</option>
+                                                                                            <option value="École des Ponts ParisTech">École des Ponts ParisTech</option>
+                                                                                            <option value="École du Louvre">École du Louvre</option>
+                                                                                            <option value="École Normale Supérieure">École Normale Supérieure</option>
+                                                                                            <option value="École Polytechnique">École Polytechnique</option>
+                                                                                            <option value="École pratique des hautes études">École pratique des hautes études</option>
+                                                                                            <option value="Edgbaston High School">Edgbaston High School</option>
+                                                                                            <option value="Egyptian Military Academy">Egyptian Military Academy</option>
+                                                                                            <option value="Elisabet-Gymnasium">Elisabet-Gymnasium</option>
+                                                                                            <option value="Emmanuel College">Emmanuel College</option>
+                                                                                            <option value="Eötvös Loránd University">Eötvös Loránd University</option>
+                                                                                            <option value="Erasmus Hall High School">Erasmus Hall High School</option>
+                                                                                            <option value="Erasmus University Rotterdam">Erasmus University Rotterdam</option>
+                                                                                            <option value="ESPCI ParisTech">ESPCI ParisTech</option>
+                                                                                            <option value="ETH Zurich">ETH Zurich</option>
+                                                                                            <option value="Eton College">Eton College</option>
+                                                                                            <option value="Exeter College">Exeter College</option>
+                                                                                            <option value="Faculty of Arts of Paris">Faculty of Arts of Paris</option>
+                                                                                            <option value="Far Rockaway High School">Far Rockaway High School</option>
+                                                                                            <option value="Fasori Gimnázium">Fasori Gimnázium</option>
+                                                                                            <option value="Fettes College">Fettes College</option>
+                                                                                            <option value="Fitzwilliam College">Fitzwilliam College</option>
+                                                                                            <option value="Flying University">Flying University</option>
+                                                                                            <option value="Frederick William University">Frederick William University</option>
+                                                                                            <option value="Free University of Brussels">Free University of Brussels</option>
+                                                                                            <option value="Friends University">Friends University</option>
+                                                                                            <option value="Friends' Central School">Friends' Central School</option>
+                                                                                            <option value="Fru Ragna Nielsens' skole">Fru Ragna Nielsens' skole</option>
+                                                                                            <option value="Fu Foundation School">Fu Foundation School</option>
+                                                                                            <option value="Fukuoka Prefectural Fukuoka High School">Fukuoka Prefectural Fukuoka High School</option>
+                                                                                            <option value="Furman University">Furman University</option>
+                                                                                            <option value="fysikfakulteten vid Moskvas institut">fysikfakulteten vid Moskvas institut</option>
+                                                                                            <option value="George Washington University">George Washington University</option>
+                                                                                            <option value="Georgia Institute of Technology">Georgia Institute of Technology</option>
+                                                                                            <option value="Georgia Southwestern State University">Georgia Southwestern State University</option>
+                                                                                            <option value="Germantown Friends School">Germantown Friends School</option>
+                                                                                            <option value="Ghent University">Ghent University</option>
+                                                                                            <option value="Goethe University Frankfurt">Goethe University Frankfurt</option>
+                                                                                            <option value="Gonville and Caius College">Gonville and Caius College</option>
+                                                                                            <option value="Government College University">Government College University</option>
+                                                                                            <option value="Graduate Institute ">Graduate Institute </option>
+                                                                                            <option value="Grenoble Alpes University">Grenoble Alpes University</option>
+                                                                                            <option value="Grinnell College">Grinnell College</option>
+                                                                                            <option value="Guy's Hospital">Guy's Hospital</option>
+                                                                                            <option value="Gymnasium Andreanum">Gymnasium Andreanum</option>
+                                                                                            <option value="Hadassah Medical Center">Hadassah Medical Center</option>
+                                                                                            <option value="Hamilton College">Hamilton College</option>
+                                                                                            <option value="Harrow School">Harrow School</option>
+                                                                                            <option value="Harvard Business School">Harvard Business School</option>
+                                                                                            <option value="Harvard College">Harvard College</option>
+                                                                                            <option value="Harvard University">Harvard University</option>
+                                                                                            <option value="Haukijärven koulu">Haukijärven koulu</option>
+                                                                                            <option value="Haverford College">Haverford College</option>
+                                                                                            <option value="Hebrew University of Jerusalem">Hebrew University of Jerusalem</option>
+                                                                                            <option value="Heidelberg University">Heidelberg University</option>
+                                                                                            <option value="Hibiya High School">Hibiya High School</option>
+                                                                                            <option value="Högre lärarinneseminariet">Högre lärarinneseminariet</option>
+                                                                                            <option value="Hokkaido University">Hokkaido University</option>
+                                                                                            <option value="Homeschooling">Homeschooling</option>
+                                                                                            <option value="Hope College">Hope College</option>
+                                                                                            <option value="Hotchkiss School">Hotchkiss School</option>
+                                                                                            <option value="Howard University">Howard University</option>
+                                                                                            <option value="Humboldt University of Berlin">Humboldt University of Berlin</option>
+                                                                                            <option value="Hunter College">Hunter College</option>
+                                                                                            <option value="Hyde Park Academy High School">Hyde Park Academy High School</option>
+                                                                                            <option value="Illinois Institute of Technology">Illinois Institute of Technology</option>
+                                                                                            <option value="Imperial Alexander University">Imperial Alexander University</option>
+                                                                                            <option value="Imperial College London">Imperial College London</option>
+                                                                                            <option value="Imperial St. Petersburg University">Imperial St. Petersburg University</option>
+                                                                                            <option value="Imperial University of Dorpat">Imperial University of Dorpat</option>
+                                                                                            <option value="Indiana University">Indiana University</option>
+                                                                                            <option value="Indiana University Bloomington">Indiana University Bloomington</option>
+                                                                                            <option value="Institución Libre de Enseñanza">Institución Libre de Enseñanza</option>
+                                                                                            <option value="International Institute of Human Rights">International Institute of Human Rights</option>
+                                                                                            <option value="Ioffe Institute">Ioffe Institute</option>
+                                                                                            <option value="Istanbul School of Medicine">Istanbul School of Medicine</option>
+                                                                                            <option value="İstanbul Üniversitesi İletişim Fakültesi">İstanbul Üniversitesi İletişim Fakültesi</option>
+                                                                                            <option value="Jagiellonian University">Jagiellonian University</option>
+                                                                                            <option value="Jesus College">Jesus College</option>
+                                                                                            <option value="Jilin University">Jilin University</option>
+                                                                                            <option value="Johannes-Kepler-Gymnasium">Johannes-Kepler-Gymnasium</option>
+                                                                                            <option value="Johanneum Breslau">Johanneum Breslau</option>
+                                                                                            <option value="John F. Kennedy School of Government">John F. Kennedy School of Government</option>
+                                                                                            <option value="Johns Hopkins School of Medicine">Johns Hopkins School of Medicine</option>
+                                                                                            <option value="Johns Hopkins University">Johns Hopkins University</option>
+                                                                                            <option value="Jordan High School">Jordan High School</option>
+                                                                                            <option value="Jumesniemen kirkko-koulu">Jumesniemen kirkko-koulu</option>
+                                                                                            <option value="Kalamazoo College">Kalamazoo College</option>
+                                                                                            <option value="Karl-Ferdinands-Universität">Karl-Ferdinands-Universität</option>
+                                                                                            <option value="Karlsruhe Institute of Technology">Karlsruhe Institute of Technology</option>
+                                                                                            <option value="Karolinska Institute">Karolinska Institute</option>
+                                                                                            <option value="Kellogg School of Management">Kellogg School of Management</option>
+                                                                                            <option value="Kilmarnock Academy">Kilmarnock Academy</option>
+                                                                                            <option value="King Edward's School">King Edward's School</option>
+                                                                                            <option value="King's College">King's College</option>
+                                                                                            <option value="King's College London">King's College London</option>
+                                                                                            <option value="Kobe University">Kobe University</option>
+                                                                                            <option value="Konservatorium Wien">Konservatorium Wien</option>
+                                                                                            <option value="KU Leuven">KU Leuven</option>
+                                                                                            <option value="Kunstakademie Düsseldorf">Kunstakademie Düsseldorf</option>
+                                                                                            <option value="Kuopion Lyseon lukio">Kuopion Lyseon lukio</option>
+                                                                                            <option value="Kwame Nkrumah University ">Kwame Nkrumah University </option>
+                                                                                            <option value="Kyoto University">Kyoto University</option>
+                                                                                            <option value="Lady Shri Ram College for Women">Lady Shri Ram College for Women</option>
+                                                                                            <option value="Lafayette College">Lafayette College</option>
+                                                                                            <option value="Lawrence University">Lawrence University</option>
+                                                                                            <option value="Leavenworth High School">Leavenworth High School</option>
+                                                                                            <option value="Lebedev Physical Institute">Lebedev Physical Institute</option>
+                                                                                            <option value="Leiden University">Leiden University</option>
+                                                                                            <option value="Leipzig University">Leipzig University</option>
+                                                                                            <option value="Leoncio Prado Military Academy">Leoncio Prado Military Academy</option>
+                                                                                            <option value="London School of Economics">London School of Economics</option>
+                                                                                            <option value="Los Angeles City College">Los Angeles City College</option>
+                                                                                            <option value="Lower Canada College">Lower Canada College</option>
+                                                                                            <option value="Ludwig Maximilian University of Munich">Ludwig Maximilian University of Munich</option>
+                                                                                            <option value="Luitpold-Gymnasium">Luitpold-Gymnasium</option>
+                                                                                            <option value="Lund University">Lund University</option>
+                                                                                            <option value="Luther College">Luther College</option>
+                                                                                            <option value="Lycée Carnot">Lycée Carnot</option>
+                                                                                            <option value="Lycée Condorcet">Lycée Condorcet</option>
+                                                                                            <option value="Lycée du Parc">Lycée du Parc</option>
+                                                                                            <option value="Lycée Henri-IV">Lycée Henri-IV</option>
+                                                                                            <option value="Lycée Janson de Sailly">Lycée Janson de Sailly</option>
+                                                                                            <option value="Lycée Lakanal">Lycée Lakanal</option>
+                                                                                            <option value="Lycée Louis-le-Grand">Lycée Louis-le-Grand</option>
+                                                                                            <option value="Lycée Michel-Montaigne">Lycée Michel-Montaigne</option>
+                                                                                            <option value="Lycée Saint-Louis">Lycée Saint-Louis</option>
+                                                                                            <option value="Madison Business College">Madison Business College</option>
+                                                                                            <option value="Magdalen College">Magdalen College</option>
+                                                                                            <option value="Magdalene College">Magdalene College</option>
+                                                                                            <option value="Magnus Church of England School">Magnus Church of England School</option>
+                                                                                            <option value="Maharaja Sayajirao University of Baroda">Maharaja Sayajirao University of Baroda</option>
+                                                                                            <option value="Malvern College">Malvern College</option>
+                                                                                            <option value="Manchester Grammar School">Manchester Grammar School</option>
+                                                                                            <option value="Marietta College">Marietta College</option>
+                                                                                            <option value="Marlborough College">Marlborough College</option>
+                                                                                            <option value="Massachusetts Institute of Technology">Massachusetts Institute of Technology</option>
+                                                                                            <option value="Max Planck Institute for Intelligent Systems">Max Planck Institute for Intelligent Systems</option>
+                                                                                            <option value="Maximiliansgymnasium München">Maximiliansgymnasium München</option>
+                                                                                            <option value="McGill University">McGill University</option>
+                                                                                            <option value="McMaster University">McMaster University</option>
+                                                                                            <option value="Melbourne High School">Melbourne High School</option>
+                                                                                            <option value="Merton College">Merton College</option>
+                                                                                            <option value="Mfantsipim School">Mfantsipim School</option>
+                                                                                            <option value="Michigan University">Michigan University</option>
+                                                                                            <option value="Mill Hill School">Mill Hill School</option>
+                                                                                            <option value="Milton Academy">Milton Academy</option>
+                                                                                            <option value="Mines ParisTech">Mines ParisTech</option>
+                                                                                            <option value="MIT Sloan School of Management">MIT Sloan School of Management</option>
+                                                                                            <option value="Mokpo Bukkyo Elementary School">Mokpo Bukkyo Elementary School</option>
+                                                                                            <option value="Monrovia High School">Monrovia High School</option>
+                                                                                            <option value="Morehouse College">Morehouse College</option>
+                                                                                            <option value="Moscow State University">Moscow State University</option>
+                                                                                            <option value="MSU Faculty of Physics">MSU Faculty of Physics</option>
+                                                                                            <option value="Nagasaki University">Nagasaki University</option>
+                                                                                            <option value="Nagoya University">Nagoya University</option>
+                                                                                            <option value="National and Kapodistrian University of Athens">National and Kapodistrian University of Athens</option>
+                                                                                            <option value="National Autonomous University of Mexico">National Autonomous University of Mexico</option>
+                                                                                            <option value="National College of Art and Design">National College of Art and Design</option>
+                                                                                            <option value="National Research Nuclear University">National Research Nuclear University</option>
+                                                                                            <option value="National Southwestern Associated University">National Southwestern Associated University</option>
+                                                                                            <option value="National Taiwan University">National Taiwan University</option>
+                                                                                            <option value="National University of La Plata">National University of La Plata</option>
+                                                                                            <option value="National University of San Marcos">National University of San Marcos</option>
+                                                                                            <option value="Naval Postgraduate School">Naval Postgraduate School</option>
+                                                                                            <option value="Nelson College">Nelson College</option>
+                                                                                            <option value="New College">New College</option>
+                                                                                            <option value="New Trier High School">New Trier High School</option>
+                                                                                            <option value="New York University">New York University</option>
+                                                                                            <option value="Newark Academy">Newark Academy</option>
+                                                                                            <option value="Newnham College">Newnham College</option>
+                                                                                            <option value="Noelani Elementary School">Noelani Elementary School</option>
+                                                                                            <option value="Northwestern University">Northwestern University</option>
+                                                                                            <option value="Norwegian Institute of Technology">Norwegian Institute of Technology</option>
+                                                                                            <option value="Norwegian School of Economics">Norwegian School of Economics</option>
+                                                                                            <option value="Oberlin College">Oberlin College</option>
+                                                                                            <option value="Occidental College">Occidental College</option>
+                                                                                            <option value="Ohio University">Ohio University</option>
+                                                                                            <option value="Oregon State University">Oregon State University</option>
+                                                                                            <option value="Oriel College">Oriel College</option>
+                                                                                            <option value="Osaka City University">Osaka City University</option>
+                                                                                            <option value="Oulun Lyseon Lukio">Oulun Lyseon Lukio</option>
+                                                                                            <option value="Paducah Tilghman High School">Paducah Tilghman High School</option>
+                                                                                            <option value="Pamer">Pamer</option>
+                                                                                            <option value="Pantheon-Sorbonne University">Pantheon-Sorbonne University</option>
+                                                                                            <option value="Paris Dauphine University">Paris Dauphine University</option>
+                                                                                            <option value="Paris Law Faculty">Paris Law Faculty</option>
+                                                                                            <option value="Pasteur Institute">Pasteur Institute</option>
+                                                                                            <option value="Peking University">Peking University</option>
+                                                                                            <option value="Peking University Health Science Center">Peking University Health Science Center</option>
+                                                                                            <option value="Pembroke College">Pembroke College</option>
+                                                                                            <option value="Pennsylvania State University">Pennsylvania State University</option>
+                                                                                            <option value="People's Liberation Army Academy of Art">People's Liberation Army Academy of Art</option>
+                                                                                            <option value="Pestalozzischule">Pestalozzischule</option>
+                                                                                            <option value="Peterhouse">Peterhouse</option>
+                                                                                            <option value="Phillips Academy">Phillips Academy</option>
+                                                                                            <option value="Phillips Exeter Academy">Phillips Exeter Academy</option>
+                                                                                            <option value="Pinsk Realschule">Pinsk Realschule</option>
+                                                                                            <option value="Politecnico di Milano">Politecnico di Milano</option>
+                                                                                            <option value="Pontifical University of Saint Thomas Aquinas">Pontifical University of Saint Thomas Aquinas</option>
+                                                                                            <option value="Presidency College">Presidency College</option>
+                                                                                            <option value="Princeton University">Princeton University</option>
+                                                                                            <option value="Pritzker School of Medicine">Pritzker School of Medicine</option>
+                                                                                            <option value="Provo High School">Provo High School</option>
+                                                                                            <option value="Punahou School">Punahou School</option>
+                                                                                            <option value="Purdue University">Purdue University</option>
+                                                                                            <option value="Queen Mary University of London">Queen Mary University of London</option>
+                                                                                            <option value="Queen's University Belfast">Queen's University Belfast</option>
+                                                                                            <option value="Radboud University Nijmegen">Radboud University Nijmegen</option>
+                                                                                            <option value="Rahway High School">Rahway High School</option>
+                                                                                            <option value="Randolph–Macon College">Randolph–Macon College</option>
+                                                                                            <option value="Rensselaer Polytechnic Institute">Rensselaer Polytechnic Institute</option>
+                                                                                            <option value="Residencia de Estudiantes">Residencia de Estudiantes</option>
+                                                                                            <option value="Rice University">Rice University</option>
+                                                                                            <option value="Riverdale High School">Riverdale High School</option>
+                                                                                            <option value="Rockford College">Rockford College</option>
+                                                                                            <option value="Rollins College">Rollins College</option>
+                                                                                            <option value="Roosevelt High School">Roosevelt High School</option>
+                                                                                            <option value="Royal Academy of Dramatic Art">Royal Academy of Dramatic Art</option>
+                                                                                            <option value="Royal Central School of Speech & Drama">Royal Central School of Speech & Drama</option>
+                                                                                            <option value="Royal Institute of Technology">Royal Institute of Technology</option>
+                                                                                            <option value="Royal Military College, Sandhurst">Royal Military College, Sandhurst</option>
+                                                                                            <option value="Rugby School">Rugby School</option>
+                                                                                            <option value="Rutgers University">Rutgers University</option>
+                                                                                            <option value="RWTH Aachen University">RWTH Aachen University</option>
+                                                                                            <option value="Saint Petersburg State University">Saint Petersburg State University</option>
+                                                                                            <option value="Saitama University">Saitama University</option>
+                                                                                            <option value="Salesian Pontifical University">Salesian Pontifical University</option>
+                                                                                            <option value="Samrat Ashok Technological Institute">Samrat Ashok Technological Institute</option>
+                                                                                            <option value="Sana'a University">Sana'a University</option>
+                                                                                            <option value="Sapienza University of Rome">Sapienza University of Rome</option>
+                                                                                            <option value="Science Faculty of Paris">Science Faculty of Paris</option>
+                                                                                            <option value="Sciences Po">Sciences Po</option>
+                                                                                            <option value="Scuola Normale Superiore">Scuola Normale Superiore</option>
+                                                                                            <option value="Semmelweis University">Semmelweis University</option>
+                                                                                            <option value="Sidney Sussex College">Sidney Sussex College</option>
+                                                                                            <option value="SIT Graduate Institute">SIT Graduate Institute</option>
+                                                                                            <option value="SOAS, University of London">SOAS, University of London</option>
+                                                                                            <option value="Somerville College">Somerville College</option>
+                                                                                            <option value="Sorbonne">Sorbonne</option>
+                                                                                            <option value="Southern Methodist University">Southern Methodist University</option>
+                                                                                            <option value="St Catherine's College">St Catherine's College</option>
+                                                                                            <option value="St Columb's College">St Columb's College</option>
+                                                                                            <option value="St George's School, Ascot">St George's School, Ascot</option>
+                                                                                            <option value="St Hugh's College">St Hugh's College</option>
+                                                                                            <option value="St John's College">St John's College</option>
+                                                                                            <option value="St Thomas's Hospital Medical School">St Thomas's Hospital Medical School</option>
+                                                                                            <option value="St. Martin's School">St. Martin's School</option>
+                                                                                            <option value="St. Olaf College">St. Olaf College</option>
+                                                                                            <option value="Stanford Graduate School of Business">Stanford Graduate School of Business</option>
+                                                                                            <option value="Stanford University">Stanford University</option>
+                                                                                            <option value="State Elementary School Menteng 01">State Elementary School Menteng 01</option>
+                                                                                            <option value="Stavropol State Agrarian University">Stavropol State Agrarian University</option>
+                                                                                            <option value="Stevens Institute of Technology">Stevens Institute of Technology</option>
+                                                                                            <option value="Stockholm School of Economics">Stockholm School of Economics</option>
+                                                                                            <option value="Stockholm University">Stockholm University</option>
+                                                                                            <option value="Stoke Brunswick School">Stoke Brunswick School</option>
+                                                                                            <option value="Stuyvesant High School">Stuyvesant High School</option>
+                                                                                            <option value="Swarthmore College">Swarthmore College</option>
+                                                                                            <option value="Sydney Boys High School">Sydney Boys High School</option>
+                                                                                            <option value="Tampereen lyseon lukio">Tampereen lyseon lukio</option>
+                                                                                            <option value="Technical University of Berlin">Technical University of Berlin</option>
+                                                                                            <option value="Technical University of Denmark">Technical University of Denmark</option>
+                                                                                            <option value="Technical University of Munich">Technical University of Munich</option>
+                                                                                            <option value="Technion – Israel Institute of Technology">Technion – Israel Institute of Technology</option>
+                                                                                            <option value="Technische Universität Darmstadt">Technische Universität Darmstadt</option>
+                                                                                            <option value="Tepper School of Business">Tepper School of Business</option>
+                                                                                            <option value="The Bronx High School of Science">The Bronx High School of Science</option>
+                                                                                            <option value="The Fletcher School of Law and Diplomacy">The Fletcher School of Law and Diplomacy</option>
+                                                                                            <option value="The Hague Academy of International Law">The Hague Academy of International Law</option>
+                                                                                            <option value="The Judd School">The Judd School</option>
+                                                                                            <option value="The New School">The New School</option>
+                                                                                            <option value="The Rockefeller University">The Rockefeller University</option>
+                                                                                            <option value="Tohoku University">Tohoku University</option>
+                                                                                            <option value="Tokyo Institute of Technology">Tokyo Institute of Technology</option>
+                                                                                            <option value="Tonbridge School">Tonbridge School</option>
+                                                                                            <option value="Townsend Harris High School">Townsend Harris High School</option>
+                                                                                            <option value="Toyama Chubu High school">Toyama Chubu High school</option>
+                                                                                            <option value="Toyama City Shimazono Junior High School">Toyama City Shimazono Junior High School</option>
+                                                                                            <option value="Trinity College">Trinity College</option>
+                                                                                            <option value="Trinity College Dublin">Trinity College Dublin</option>
+                                                                                            <option value="Trinity Hall">Trinity Hall</option>
+                                                                                            <option value="Tsinghua University">Tsinghua University</option>
+                                                                                            <option value="TU Wien">TU Wien</option>
+                                                                                            <option value="Tufts University">Tufts University</option>
+                                                                                            <option value="Tufts University School of Medicine">Tufts University School of Medicine</option>
+                                                                                            <option value="Union College">Union College</option>
+                                                                                            <option value="United Services College">United Services College</option>
+                                                                                            <option value="United States Merchant Marine Academy">United States Merchant Marine Academy</option>
+                                                                                            <option value="United States Naval Academy">United States Naval Academy</option>
+                                                                                            <option value="Universidad Central">Universidad Central</option>
+                                                                                            <option value="Universidad de San Carlos de Guatemala">Universidad de San Carlos de Guatemala</option>
+                                                                                            <option value="Université de Montréal">Université de Montréal</option>
+                                                                                            <option value="Université libre de Bruxelles">Université libre de Bruxelles</option>
+                                                                                            <option value="University at Buffalo">University at Buffalo</option>
+                                                                                            <option value="University College Dublin">University College Dublin</option>
+                                                                                            <option value="University College London">University College London</option>
+                                                                                            <option value="University Laboratory High School">University Laboratory High School</option>
+                                                                                            <option value="University of Aberdeen">University of Aberdeen</option>
+                                                                                            <option value="University of Adelaide">University of Adelaide</option>
+                                                                                            <option value="University of Alberta">University of Alberta</option>
+                                                                                            <option value="University of Algiers">University of Algiers</option>
+                                                                                            <option value="University of Amsterdam">University of Amsterdam</option>
+                                                                                            <option value="University of Basel">University of Basel</option>
+                                                                                            <option value="University of Bern">University of Bern</option>
+                                                                                            <option value="University of Birmingham">University of Birmingham</option>
+                                                                                            <option value="University of Bologna">University of Bologna</option>
+                                                                                            <option value="University of Bonn">University of Bonn</option>
+                                                                                            <option value="University of Bordeaux">University of Bordeaux</option>
+                                                                                            <option value="University of Bristol">University of Bristol</option>
+                                                                                            <option value="University of British Columbia">University of British Columbia</option>
+                                                                                            <option value="University of Bucharest">University of Bucharest</option>
+                                                                                            <option value="University of Buenos Aires">University of Buenos Aires</option>
+                                                                                            <option value="University of Burgundy">University of Burgundy</option>
+                                                                                            <option value="University of Calcutta">University of Calcutta</option>
+                                                                                            <option value="University of California, Berkeley">University of California, Berkeley</option>
+                                                                                            <option value="University of California, Los Angeles">University of California, Los Angeles</option>
+                                                                                            <option value="University of California, Riverside">University of California, Riverside</option>
+                                                                                            <option value="University of California, San Diego">University of California, San Diego</option>
+                                                                                            <option value="University of California, San Francisco">University of California, San Francisco</option>
+                                                                                            <option value="University of California, Santa Barbara">University of California, Santa Barbara</option>
+                                                                                            <option value="University of Cambridge">University of Cambridge</option>
+                                                                                            <option value="University of Canterbury">University of Canterbury</option>
+                                                                                            <option value="University of Cape Town">University of Cape Town</option>
+                                                                                            <option value="University of Chicago">University of Chicago</option>
+                                                                                            <option value="University of Chile">University of Chile</option>
+                                                                                            <option value="University of Cincinnati College of Law">University of Cincinnati College of Law</option>
+                                                                                            <option value="University of Coimbra">University of Coimbra</option>
+                                                                                            <option value="University of Cologne">University of Cologne</option>
+                                                                                            <option value="University of Colorado">University of Colorado</option>
+                                                                                            <option value="University of Colorado Boulder">University of Colorado Boulder</option>
+                                                                                            <option value="University of Connecticut">University of Connecticut</option>
+                                                                                            <option value="University of Copenhagen">University of Copenhagen</option>
+                                                                                            <option value="University of Delaware">University of Delaware</option>
+                                                                                            <option value="University of Dhaka">University of Dhaka</option>
+                                                                                            <option value="University of Dundee">University of Dundee</option>
+                                                                                            <option value="University of Düsseldorf">University of Düsseldorf</option>
+                                                                                            <option value="University of East Anglia">University of East Anglia</option>
+                                                                                            <option value="University of Edinburgh">University of Edinburgh</option>
+                                                                                            <option value="University of Essex">University of Essex</option>
+                                                                                            <option value="University of Florida">University of Florida</option>
+                                                                                            <option value="University of Fort Hare">University of Fort Hare</option>
+                                                                                            <option value="University of Freiburg">University of Freiburg</option>
+                                                                                            <option value="University of Geneva">University of Geneva</option>
+                                                                                            <option value="University of Glasgow">University of Glasgow</option>
+                                                                                            <option value="University of Göttingen">University of Göttingen</option>
+                                                                                            <option value="University of Graz">University of Graz</option>
+                                                                                            <option value="University of Greenwich">University of Greenwich</option>
+                                                                                            <option value="University of Groningen">University of Groningen</option>
+                                                                                            <option value="University of Halle-Wittenberg">University of Halle-Wittenberg</option>
+                                                                                            <option value="University of Hamburg">University of Hamburg</option>
+                                                                                            <option value="University of Hanover">University of Hanover</option>
+                                                                                            <option value="University of Helsinki">University of Helsinki</option>
+                                                                                            <option value="University of Illinois at Chicago">University of Illinois at Chicago</option>
+                                                                                            <option value="University of Illinois at Urbana–Champaign">University of Illinois at Urbana–Champaign</option>
+                                                                                            <option value="University of Illinois system">University of Illinois system</option>
+                                                                                            <option value="University of Jena">University of Jena</option>
+                                                                                            <option value="University of Kansas">University of Kansas</option>
+                                                                                            <option value="University of Kent">University of Kent</option>
+                                                                                            <option value="University of Kentucky">University of Kentucky</option>
+                                                                                            <option value="University of Kiel">University of Kiel</option>
+                                                                                            <option value="University of Königsberg">University of Königsberg</option>
+                                                                                            <option value="University of Lausanne">University of Lausanne</option>
+                                                                                            <option value="University of Leeds">University of Leeds</option>
+                                                                                            <option value="University of Liège">University of Liège</option>
+                                                                                            <option value="University of Liverpool">University of Liverpool</option>
+                                                                                            <option value="University of London">University of London</option>
+                                                                                            <option value="University of Lyon">University of Lyon</option>
+                                                                                            <option value="University of Madras">University of Madras</option>
+                                                                                            <option value="University of Manchester">University of Manchester</option>
+                                                                                            <option value="University of Marburg">University of Marburg</option>
+                                                                                            <option value="University of Maryland">University of Maryland</option>
+                                                                                            <option value="University of Massachusetts Amherst">University of Massachusetts Amherst</option>
+                                                                                            <option value="University of Melbourne">University of Melbourne</option>
+                                                                                            <option value="University of Michigan">University of Michigan</option>
+                                                                                            <option value="University of Milan">University of Milan</option>
+                                                                                            <option value="University of Minnesota">University of Minnesota</option>
+                                                                                            <option value="University of Minnesota Duluth">University of Minnesota Duluth</option>
+                                                                                            <option value="University of Mississippi">University of Mississippi</option>
+                                                                                            <option value="University of Missouri">University of Missouri</option>
+                                                                                            <option value="University of Montana">University of Montana</option>
+                                                                                            <option value="University of Nairobi">University of Nairobi</option>
+                                                                                            <option value="University of Nebraska–Lincoln">University of Nebraska–Lincoln</option>
+                                                                                            <option value="University of Nice Sophia-Antipolis">University of Nice Sophia-Antipolis</option>
+                                                                                            <option value="University of North Carolina at Chapel Hill">University of North Carolina at Chapel Hill</option>
+                                                                                            <option value="University of Notre Dame">University of Notre Dame</option>
+                                                                                            <option value="University of Nottingham">University of Nottingham</option>
+                                                                                            <option value="University of Oregon">University of Oregon</option>
+                                                                                            <option value="University of Oslo">University of Oslo</option>
+                                                                                            <option value="University of Oulu">University of Oulu</option>
+                                                                                            <option value="University of Oxford">University of Oxford</option>
+                                                                                            <option value="University of Paris">University of Paris</option>
+                                                                                            <option value="University of Pavia">University of Pavia</option>
+                                                                                            <option value="University of Pennsylvania">University of Pennsylvania</option>
+                                                                                            <option value="University of Pisa">University of Pisa</option>
+                                                                                            <option value="University of Pittsburgh">University of Pittsburgh</option>
+                                                                                            <option value="University of Queensland">University of Queensland</option>
+                                                                                            <option value="University of Rochester">University of Rochester</option>
+                                                                                            <option value="University of Rostock">University of Rostock</option>
+                                                                                            <option value="University of Saskatchewan">University of Saskatchewan</option>
+                                                                                            <option value="University of Seville">University of Seville</option>
+                                                                                            <option value="University of Sheffield">University of Sheffield</option>
+                                                                                            <option value="University of South Africa">University of South Africa</option>
+                                                                                            <option value="University of South Carolina">University of South Carolina</option>
+                                                                                            <option value="University of South Dakota">University of South Dakota</option>
+                                                                                            <option value="University of St Andrews">University of St Andrews</option>
+                                                                                            <option value="University of Strasbourg">University of Strasbourg</option>
+                                                                                            <option value="University of Stuttgart">University of Stuttgart</option>
+                                                                                            <option value="University of Sydney">University of Sydney</option>
+                                                                                            <option value="University of Tehran">University of Tehran</option>
+                                                                                            <option value="University of Texas at Austin">University of Texas at Austin</option>
+                                                                                            <option value="University of Texas at Dallas">University of Texas at Dallas</option>
+                                                                                            <option value="University of Texas Southwestern Medical Center">University of Texas Southwestern Medical Center</option>
+                                                                                            <option value="University of the Punjab">University of the Punjab</option>
+                                                                                            <option value="University of the West Indies">University of the West Indies</option>
+                                                                                            <option value="University of the Witwatersrand">University of the Witwatersrand</option>
+                                                                                            <option value="University of Tokushima">University of Tokushima</option>
+                                                                                            <option value="University of Tokyo">University of Tokyo</option>
+                                                                                            <option value="University of Toronto">University of Toronto</option>
+                                                                                            <option value="University of Toronto Mississauga">University of Toronto Mississauga</option>
+                                                                                            <option value="University of Tübingen">University of Tübingen</option>
+                                                                                            <option value="University of Turin">University of Turin</option>
+                                                                                            <option value="University of Vermont">University of Vermont</option>
+                                                                                            <option value="University of Vienna">University of Vienna</option>
+                                                                                            <option value="University of Virginia">University of Virginia</option>
+                                                                                            <option value="University of Warsaw">University of Warsaw</option>
+                                                                                            <option value="University of Warwick">University of Warwick</option>
+                                                                                            <option value="University of Washington">University of Washington</option>
+                                                                                            <option value="University of Western Australia">University of Western Australia</option>
+                                                                                            <option value="University of Western Ontario">University of Western Ontario</option>
+                                                                                            <option value="University of Westminster">University of Westminster</option>
+                                                                                            <option value="University of Wisconsin–Madison">University of Wisconsin–Madison</option>
+                                                                                            <option value="University of Wisconsin–Milwaukee">University of Wisconsin–Milwaukee</option>
+                                                                                            <option value="University of Wrocław">University of Wrocław</option>
+                                                                                            <option value="University of Würzburg">University of Würzburg</option>
+                                                                                            <option value="University of Zaragoza">University of Zaragoza</option>
+                                                                                            <option value="University School of Nashville">University School of Nashville</option>
+                                                                                            <option value="Upper Iowa University">Upper Iowa University</option>
+                                                                                            <option value="Uppsala University">Uppsala University</option>
+                                                                                            <option value="Urbana High School">Urbana High School</option>
+                                                                                            <option value="Ursinus College">Ursinus College</option>
+                                                                                            <option value="Utah State University">Utah State University</option>
+                                                                                            <option value="Utrecht University">Utrecht University</option>
+                                                                                            <option value="Vanderbilt University">Vanderbilt University</option>
+                                                                                            <option value="Viborg Katedralskole">Viborg Katedralskole</option>
+                                                                                            <option value="Victoria University of Manchester">Victoria University of Manchester</option>
+                                                                                            <option value="Victoria University of Wellington">Victoria University of Wellington</option>
+                                                                                            <option value="Vilnius University">Vilnius University</option>
+                                                                                            <option value="Virginia Military Institute">Virginia Military Institute</option>
+                                                                                            <option value="Virginia Tech">Virginia Tech</option>
+                                                                                            <option value="Visva-Bharati University">Visva-Bharati University</option>
+                                                                                            <option value="Voronezh State University">Voronezh State University</option>
+                                                                                            <option value="Walton High School">Walton High School</option>
+                                                                                            <option value="Washburn University">Washburn University</option>
+                                                                                            <option value="Washington and Lee University">Washington and Lee University</option>
+                                                                                            <option value="Washington High School">Washington High School</option>
+                                                                                            <option value="Washington University in St. Louis">Washington University in St. Louis</option>
+                                                                                            <option value="Washington University School of Medicine">Washington University School of Medicine</option>
+                                                                                            <option value="Watchung Hills Regional High School">Watchung Hills Regional High School</option>
+                                                                                            <option value="Wauwatosa East High School">Wauwatosa East High School</option>
+                                                                                            <option value="Weill Cornell Medical">Weill Cornell Medical</option>
+                                                                                            <option value="Weizmann Institute of Science">Weizmann Institute of Science</option>
+                                                                                            <option value="West University of Timișoara">West University of Timișoara</option>
+                                                                                            <option value="Westminster School">Westminster School</option>
+                                                                                            <option value="Whitman College">Whitman College</option>
+                                                                                            <option value="Willamette University">Willamette University</option>
+                                                                                            <option value="William Adams High School">William Adams High School</option>
+                                                                                            <option value="Williams College">Williams College</option>
+                                                                                            <option value="Winchester College">Winchester College</option>
+                                                                                            <option value="Woking County Grammar School for Boys">Woking County Grammar School for Boys</option>
+                                                                                            <option value="Yale School of Medicine">Yale School of Medicine</option>
+                                                                                            <option value="Yale University">Yale University</option>
+                                                                                            <option value="Yamaguchi Prefectural Ube High School">Yamaguchi Prefectural Ube High School</option>
+                                                                                            <option value="Zhejiang University">Zhejiang University</option>
+                                                                                            <option value="Zurich University">Zurich University</option>
+                                                                                            <option value="Other">Other</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            <div class="col-6 col-12-xsmall">
+                                                                                    <select name="award" id="form-award">
+                                                                                            <option value="">- Award Category -</option>
+                                                                                            <option value="Chemistry">Chemistry</option>
+                                                                                            <option value="Economic Sciences">Economic Sciences</option>
+                                                                                            <option value="Literature">Literature</option>
+                                                                                            <option value="Peace">Peace</option>
+                                                                                            <option value="Physics">Physics</option>
+                                                                                            <option value="Physiology or Medicine">Physiology or Medicine</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="col-12">
+                                                                                    <ul class="actions">
+                                                                                            <li><input type="submit" value="Submit" class="primary" /></li>
+                                                                                            <li><input type="reset" value="Reset" /></li>
+                                                                                    </ul>
+                                                                            </div>
+                                                                    </div>
+                                                                </form>	
+                                                            </header>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+                                                <section>
+							<h2>About Us</h2>
+							<p>The creators are Amir Abramovich and Dean Caspy.<br>We are Computer Science students in Ben Gurion University.<br>We did this project as part of Digital Humanities course by guidance of Dr. Yael Netzer.</p></section>
+                                                <section>
+							<h2>About the Project</h2>
+							<p>We used nobelprize.org linked data tool through which we downloaded all the relevant data about nobel prize laureates and analyze it using open-refine tool and more databases like dbpedia and wikidata to acknowledge more information about the laureates, like religion, occurance etc.<br>We used python scripts and regular expressions in sublime and excel functions for ordering the data.<br>We used datawrapper.de app in order to analyze the data and create informative interactive charts.<br>
+							You can download our datasets <a href="datasets.xlsx">here</a> or <a href="https://postbguacil-my.sharepoint.com/:x:/g/personal/amirabra_post_bgu_ac_il/EeEAXHiThFxJhftI0D_PZ2YBQQKos3XekTeGCVgtqTJ4CQ?e=E4PTMs">here</a>.</p></section>
+						<p class="copyright">Sources:
+						<a href="https://nobelprize.org">nobelprize.org</a> 
+						 &amp; <a href="http://dbpedia.org">dbpedia.org</a> &amp; <a href="http://rdf.freebase.com">rdf.freebase.com</a>
+						  &amp; <a href="http://www.w3.org/">w3.org</a> &amp; <a href="http://viaf.org">viaf.org</a>
+						   &amp; <a href="https://wikidata.org">wikidata.org</a>.
+						   <br>Tools:
+						<a href="http://openrefine.org/">openrefine.org</a> 
+						 &amp; <a href="https://www.sublimetext.com/">sublimetext.com</a> &amp; 
+						 <a href="https://www.python.org/">python.org</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
