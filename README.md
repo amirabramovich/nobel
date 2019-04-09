@@ -1,3 +1,5 @@
+https://amirabramovich.github.io/nobel/
+
 The Nobel Prize is a set of annual international awards bestowed in several categories by Swedish and Norwegian institutions in recognition of academic, cultural, or scientific advances. 
 Between 1901 and 2018, the Nobel Prizes (and the Prizes in Economic Sciences, from 1969 on) were awarded to 908 people. 
 As of 2018, the Nobel Prize has been awarded to women 52 times. Only one woman, Marie Curie, has been honoured twice. 
